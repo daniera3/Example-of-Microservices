@@ -8,19 +8,21 @@
 <script src="~/Scripts/jquery-3.3.1.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>
 <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-@using (Html.BeginForm("Register", "Acc", FormMethod.Post))
+@using (Html.BeginForm("IsRegister", "Acc", FormMethod.Post))
 {
     <div style="color:red">@ViewBag.error </div>
     <div class="form-group">
-        <label for="fn">ID</label>
+        <label for="ID">ID</label>
         @Html.TextBoxFor(m => m.user, new { @class = "form-control" })
         <div style="color:red">@Html.ValidationMessageFor(x => x.user) </div>
     </div>
     <div class="form-group">
-        <label for="Last Name">password</label>
-        @Html.TextBoxFor(m => m.password, new { @class = "form-control" })
+        <label for="password">password</label>
+        @Html.TextBoxFor(m => m.password, new { @class = "form-control", Type = "password", placeholder = "Password" })
         <div style="color:red">@Html.ValidationMessageFor(x => x.password) </div>
     </div>
-    <input id="Submit2" class="btn btn-primary" type="submit" value="Login" />
+    <input id="Submit1" class="btn btn-primary" type="submit" value="Signin" />
 }
 
+<br />
+    <a href="Register" class="btn btn-info" role="button">Signout</a>

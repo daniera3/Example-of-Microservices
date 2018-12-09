@@ -8,11 +8,14 @@ namespace site.Models
 {
     public class Register
     {
+        [Required]
+        [RegularExpression("^[0-9,a-z,A-Z]{9}$", ErrorMessage = "pls enter 9 digits")]
         public string User { get; set; }
         [Required]
-        public string Time { get; set; }
+        public string password { get; set; }
         [Required]
-        [MinLength(5)]
-        public string Name { get; set; }
+        public string Check { get; set; }
     }
+
+
 }

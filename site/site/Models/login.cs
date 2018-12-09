@@ -8,8 +8,8 @@ namespace site.Models
 {
     public class Login
     {
-         [Required]
-        [RegularExpression("^[0-9]{8}$", ErrorMessage = "pls enter 9 digits")]
+        [Required]
+        [RegularExpression("^[0-9,a-z,A-Z]{9}$", ErrorMessage = "pls enter 9 digits")]
         public string user { get; set; }
         [Required]
         public string password { get; set; }
