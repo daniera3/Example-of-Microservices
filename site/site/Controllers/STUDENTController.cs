@@ -5,9 +5,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace site.Controllers
 {
-    public class AccController : Controller
+    public class StudentController : Controller
     {
         public ActionResult StudentDetals(Register obj)
         {
@@ -27,7 +28,7 @@ namespace site.Controllers
                 return View(new Register { User = obj.user });
             }
             ViewBag.error = "id/possword no incorrect";
-            return View("Login", obj);
+            return View("Login",obj);
 
         }
     }

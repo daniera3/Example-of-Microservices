@@ -23,8 +23,8 @@
                     <li>@Html.ActionLink("MOVIES", "MOVIES", "MOVIES")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Signin", "Sinin", "Acc")</li>
-                    <li>@Html.ActionLink("Signup", "Signup", "Acc")</li>
+                    <li>@Html.ActionLink("Signin", "Login", "Acc")</li>
+                    <li>@Html.ActionLink("Signup", "Register", "Acc")</li>
                 </ul>
             </div>
         </div>
@@ -33,7 +33,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Date - IMDB</p>
+            <p>&copy; @DateTime.Now.Year - IMDB</p>
         </footer>
     </div>
 

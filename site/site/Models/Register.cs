@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace dani.Models
+namespace site.Models
 {
     public class Register
     {

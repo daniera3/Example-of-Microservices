@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using WebApplication1.BinderModel;
-using WebApplication1.Models;
+using site.BinderModel;
+using site.Models;
 
-namespace WebApplication1.Views.Home
+namespace site.Views.Home
 {
     public class CustomerController : Controller
     {
