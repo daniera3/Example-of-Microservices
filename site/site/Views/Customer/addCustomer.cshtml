@@ -1,0 +1,35 @@
+﻿@model WebApplication1.Models.Customer
+@{
+    ViewBag.Title = "addCustomer";
+}
+
+<h2>add now Customer</h2>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+@using (Html.BeginForm("Submit", "Customer", FormMethod.Post))
+{
+
+<div class="form-group">
+    <label for="fn">First Name</label>
+    @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+    <div style="color:red">@Html.ValidationMessageFor(x => x.FirstName) </div>
+</div>
+    <div class="form-group">
+        <label for="Last Name">Last Name</label>
+        @Html.TextBoxFor(m => m.Lastname, new { @class = "form-control" })
+        <div style="color:red">@Html.ValidationMessageFor(x => x.Lastname) </div>
+    </div>
+    <div class="form-group">
+        <label for="id">ID</label>
+        @Html.TextBoxFor(m => m.ID, new { @class = "form-control" })
+        <div style="color:red">@Html.ValidationMessageFor(x => x.ID) </div>
+    </div>
+    <div class="form-group">
+        <label for="Avereng">Avereng</label>
+        @Html.TextBoxFor(m=>m.Avereng,new {@class= "form-control" })
+        
+        <div style="color:red">@Html.ValidationMessageFor(x => x.Avereng) </div>
+    </div>
+    <input id="Submit1" class="btn btn-primary" type="submit" value="Add Customer" />
+}
