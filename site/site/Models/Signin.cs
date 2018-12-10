@@ -14,7 +14,7 @@ namespace site.Models
             {
                 SqlDataReader reader;
                 String query = "SELECT [userID] ,[password] FROM [dbo].[user] WHERE [userID] = @userID AND [password]=@password";
-                using (SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=D:\\Example-of-Microservices\\site\\site\\App_Data\\MyData.mdf;Integrated Security=True"))
+                using (SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\nicolro1\\Desktop\\Example-of-Microservices--master\\site\\site\\App_Data\\MyData.mdf;Integrated Security=True"))
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     //a shorter syntax to adding parameters

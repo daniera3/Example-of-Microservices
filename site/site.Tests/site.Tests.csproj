@@ -6,7 +6,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F4E16F72-CC8C-4FE7-BF3F-85A6A9A715AC}</ProjectGuid>
+    <ProjectGuid>{93F12161-B23F-4A4A-A0CD-D686EB536587}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>site.Tests</RootNamespace>
@@ -100,7 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\site\site.csproj">
-      <Project>{C085DFDD-5492-42DE-BBE6-7190CEB4C35F}</Project>
+      <Project>{78B8B209-28A0-4383-A977-3FE3DB6A3FB0}</Project>
       <Name>site</Name>
     </ProjectReference>
   </ItemGroup>
