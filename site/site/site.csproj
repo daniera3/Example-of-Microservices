@@ -134,9 +134,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AddNowUser.cs" />
     <Compile Include="Models\customer.cs" />
     <Compile Include="Models\login.cs" />
     <Compile Include="Models\Register.cs" />
+    <Compile Include="Models\Signin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
