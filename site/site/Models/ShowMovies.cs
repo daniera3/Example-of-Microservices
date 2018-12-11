@@ -8,11 +8,11 @@ namespace site.Models
 {
     public class ShowMovies
     {
-        public SqlDataReader string Check()
+        SqlDataReader reader;
+        public SqlDataReader Check()
         {
 
                 string sqlCon = "Data Source=(localdb)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|MyData.mdf;Integrated Security=True";
-                SqlDataReader reader;
                 String query = "SELECT * FROM [dbo].[Movies]";
                 //using (SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\nicolro1\\Desktop\\Example-of-Microservices--master\\site\\site\\App_Data\\MyData.mdf;Integrated Security=True"))
                 using (SqlConnection connection = new SqlConnection(sqlCon))
@@ -24,12 +24,11 @@ namespace site.Models
                     connection.Open();
                     reader = command.ExecuteReader();
                      }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
-                        return ex.Message;
-
+                    return null;
                     }
-                return reader;
+                    return reader;
                 }
 
 

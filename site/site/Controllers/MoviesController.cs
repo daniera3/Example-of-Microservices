@@ -12,7 +12,8 @@ namespace site.Controllers
         // GET: Movies
         public ActionResult Movies()
         {
-            return View(new Movie());
+            new ShowMovies().Check();
+            return View();
         }
     }
 }

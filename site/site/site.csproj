@@ -201,6 +201,7 @@
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\Register.cs" />
     <Compile Include="Models\RUNpython.cs" />
+    <Compile Include="Models\ShowMovies.cs" />
     <Compile Include="Models\Signin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -213,6 +214,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Controllers\controller.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
