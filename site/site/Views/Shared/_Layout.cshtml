@@ -20,12 +20,25 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("MOVIES", "MOVIES", "MOVIES")</li>
+
+                    @if (!(TempData["Login"] is null) && TempData["Login"].ToString() == "true")
+                    {
+                        ViewBag.type = "invisible";
+                        ViewBag.type1 = "visible";
+                        TempData["Login"] = "true";
+                    }
+                    else
+                    {
+                        ViewBag.type1 = "invisible";
+                        ViewBag.type = "visible";
+                    }
+                    <li>@Html.ActionLink("Movies", "Movies", "Movies")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Signin", "Login", "Acc")</li>
-                    <li>@Html.ActionLink("Signup", "Register", "Acc")</li>
-                </ul>
+                    <li class=@ViewBag.type>@Html.ActionLink("Sign in", "Login", "Acc")</li>
+                    <li class=@ViewBag.type>@Html.ActionLink("Sign up", "Register", "Acc")</li>
+                    <li class=@ViewBag.type1>@{ViewBag.type1 = "invisible"; ViewBag.type="visible";} </li>
+</ul>
             </div>
         </div>
     </div>

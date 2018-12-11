@@ -14,7 +14,7 @@ namespace site.Models
             {
                 string sqlCon = "Data Source=(localdb)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|MyData.mdf;Integrated Security=True";
                 SqlDataReader reader;
-                String query = "SELECT [userID] ,[password] FROM [dbo].[user] WHERE [userID] = @userID AND [password]=@password";
+                String query = "SELECT COUNT([userID]) FROM [dbo].[user] WHERE [userID] = @userID AND [password]=@password";
                 //using (SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\nicolro1\\Desktop\\Example-of-Microservices--master\\site\\site\\App_Data\\MyData.mdf;Integrated Security=True"))
                 using (SqlConnection connection = new SqlConnection(sqlCon))
                 using (SqlCommand command = new SqlCommand(query, connection))
@@ -23,11 +23,20 @@ namespace site.Models
                     command.Parameters.AddWithValue("@userID", obj.user);
                     command.Parameters.AddWithValue("@password", obj.password);
                     //make sure you open and close(after executing) the connection
-                    connection.Open();
+                    try
+                    {
+                        connection.Open();
+                    }
+                    catch (Exception ex)
+                    {
+                        return ex.Message;
+
+                    }
                     reader = command.ExecuteReader();
-                    if (reader.HasRows)
+                     if (reader.HasRows)
                     {
                         connection.Close();
+
                         return "true";
                     }
                     else
@@ -40,9 +49,9 @@ namespace site.Models
 
 
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                return ex.Message;
+                return "this acount hes it";
 
             }
         }

@@ -11,6 +11,7 @@ namespace site.Models
 
         public string NowUser(Register obj)
         {
+
             try
             {
                 string sqlCon = "Data Source=(localdb)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|MyData.mdf;Integrated Security=True";
@@ -24,7 +25,17 @@ namespace site.Models
 
                     command.Parameters.AddWithValue("@password", obj.password);
                     //make sure you open and close(after executing) the connection
-                    connection.Open();
+                    try
+                    {
+                        connection.Open();
+                    }
+                    catch (SqlException ex )
+                    {
+                        /*  string uml = "D:\\Example-of-Microservices\\site\\site\\Models\\movies.py";
+                          RUNpython x = new RUNpython();
+                          x.Runpy(uml);*/
+                        return ex.Message;
+                    }
                     command.ExecuteNonQuery();
                     connection.Close();
                 }
