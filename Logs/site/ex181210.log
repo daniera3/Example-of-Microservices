@@ -1,0 +1,66 @@
+#Software: Microsoft Internet Information Services 10.0
+#Version: 1.0
+#Date: 2018-12-10 00:00:29
+#Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
+2018-12-10 00:00:29 ::1 GET / - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 - 200 0 0 6144
+2018-12-10 00:00:31 ::1 GET /Acc/Register - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 http://localhost:2063/ 200 0 0 1020
+2018-12-10 00:00:31 ::1 GET /Scripts/jquery-3.3.1.min.js - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 http://localhost:2063/Acc/Register 304 0 0 8
+2018-12-10 00:00:31 ::1 GET /Scripts/jquery.validate.min.js - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 http://localhost:2063/Acc/Register 304 0 0 6
+2018-12-10 00:00:31 ::1 GET /Scripts/jquery.validate.unobtrusive.min.js - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 http://localhost:2063/Acc/Register 304 0 0 7
+2018-12-10 00:00:40 ::1 POST /Acc/Register - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 http://localhost:2063/Acc/Register 302 0 0 455
+2018-12-10 00:00:40 ::1 GET / - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 http://localhost:2063/Acc/Register 200 0 0 5
+#Software: Microsoft Internet Information Services 10.0
+#Version: 1.0
+#Date: 2018-12-10 00:19:15
+#Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
+2018-12-10 00:19:15 ::1 GET / - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 - 200 0 0 11062
+2018-12-10 00:19:21 ::1 GET /Acc/Register - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 http://localhost:2063/ 200 0 0 1440
+2018-12-10 00:19:42 ::1 POST /Acc/Register - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 http://localhost:2063/Acc/Register 200 0 0 413
+2018-12-10 00:19:56 ::1 POST /Acc/Register - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 http://localhost:2063/Acc/Register 200 0 0 29
+2018-12-10 00:20:04 ::1 POST /Acc/Register - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 http://localhost:2063/Acc/Register 302 0 0 9
+2018-12-10 00:20:04 ::1 GET /Acc/Login user=123456788 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 http://localhost:2063/Acc/Register 200 0 0 933
+#Software: Microsoft Internet Information Services 10.0
+#Version: 1.0
+#Date: 2018-12-10 00:21:35
+#Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
+2018-12-10 00:21:35 ::1 GET / - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 - 200 0 0 6305
+2018-12-10 00:21:39 ::1 GET /Acc/Login - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 http://localhost:2063/ 200 0 0 1052
+2018-12-10 00:21:43 ::1 GET /Acc/Register - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 http://localhost:2063/Acc/Login 200 0 0 939
+2018-12-10 00:21:51 ::1 POST /Acc/Register - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 http://localhost:2063/Acc/Register 302 0 0 358
+2018-12-10 00:21:51 ::1 GET /Acc/Login user=123456123 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 http://localhost:2063/Acc/Register 200 0 0 3
+2018-12-10 00:22:06 ::1 POST /Acc/IsRegister - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 http://localhost:2063/Acc/Login?user=123456123 302 0 0 9
+2018-12-10 00:22:06 ::1 GET / - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 http://localhost:2063/Acc/Login?user=123456123 200 0 0 3
+2018-12-10 00:22:12 ::1 GET /Acc/Login - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 http://localhost:2063/ 200 0 0 3
+2018-12-10 00:22:21 ::1 POST /Acc/IsRegister - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 http://localhost:2063/Acc/Login 302 0 0 4
+2018-12-10 00:22:21 ::1 GET / - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 http://localhost:2063/Acc/Login 200 0 0 2
+#Software: Microsoft Internet Information Services 10.0
+#Version: 1.0
+#Date: 2018-12-10 00:30:04
+#Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
+2018-12-10 00:30:04 ::1 GET / - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 - 200 0 0 5993
+2018-12-10 00:30:08 ::1 GET /Acc/Login - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 http://localhost:2063/ 200 0 0 1132
+#Software: Microsoft Internet Information Services 10.0
+#Version: 1.0
+#Date: 2018-12-10 00:31:11
+#Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
+2018-12-10 00:31:11 ::1 GET / - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 - 200 0 0 5997
+2018-12-10 00:31:14 ::1 GET /Acc/Login - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 http://localhost:2063/ 200 0 0 1162
+2018-12-10 00:31:28 ::1 POST /Acc/IsRegister - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 http://localhost:2063/Acc/Login 200 0 0 344
+2018-12-10 00:31:31 ::1 POST /Acc/IsRegister - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 http://localhost:2063/Acc/IsRegister 302 0 0 11
+2018-12-10 00:31:31 ::1 GET / - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 http://localhost:2063/Acc/IsRegister 200 0 0 4
+2018-12-10 00:31:46 ::1 GET /Acc/Login - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 http://localhost:2063/ 200 0 0 7
+#Software: Microsoft Internet Information Services 10.0
+#Version: 1.0
+#Date: 2018-12-10 00:35:35
+#Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
+2018-12-10 00:35:35 ::1 GET / - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 - 200 0 0 6127
+2018-12-10 00:35:39 ::1 GET /Acc/Register - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 http://localhost:2063/ 200 0 0 1250
+2018-12-10 00:35:51 ::1 POST /Acc/Register - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 http://localhost:2063/Acc/Register 302 0 0 354
+2018-12-10 00:35:51 ::1 GET /Acc/Login user=123456798 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 http://localhost:2063/Acc/Register 200 0 0 875
+2018-12-10 00:35:59 ::1 POST /Acc/IsRegister - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 http://localhost:2063/Acc/Login?user=123456798 200 0 0 15
+2018-12-10 00:36:03 ::1 POST /Acc/IsRegister - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 http://localhost:2063/Acc/IsRegister 302 0 0 4
+2018-12-10 00:36:03 ::1 GET / - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 http://localhost:2063/Acc/IsRegister 200 0 0 3
+2018-12-10 00:36:14 ::1 GET / - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 http://localhost:2063/ 200 0 0 4
+2018-12-10 00:36:16 ::1 GET /MOVIES/MOVIES - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 http://localhost:2063/ 404 0 0 18
+2018-12-10 00:36:20 ::1 GET /Home/About - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 http://localhost:2063/ 200 0 0 14
+2018-12-10 00:36:22 ::1 GET /Home/Contact - 2063 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/70.0.3538.110+Safari/537.36 http://localhost:2063/ 200 0 0 14
