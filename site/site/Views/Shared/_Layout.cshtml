@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿
+<script src="~/Models/signout.js"></script>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -37,7 +39,8 @@
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li class=@ViewBag.type>@Html.ActionLink("Sign in", "Login", "Acc")</li>
                     <li class=@ViewBag.type>@Html.ActionLink("Sign up", "Register", "Acc")</li>
-                   
+                    <input id='sign_out' type="button" value="Sign Out" />
+
                 </ul>
             </div>
         </div>
