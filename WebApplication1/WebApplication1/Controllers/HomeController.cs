@@ -20,9 +20,9 @@ namespace WebApplication1.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Genre()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Your genre page.";
 
             return View();
         }
