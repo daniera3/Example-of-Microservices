@@ -31,15 +31,16 @@ namespace WebApplication1.Controllers
             ViewBag.g5 = "https://m.media-amazon.com/images/M/MV5BMTYyNzEyNDAzOV5BMl5BanBnXkFtZTgwNTk3NDczNjM@._V1_UY209_CR0,0,140,209_AL_.jpg";
             ViewBag.g6 = "https://m.media-amazon.com/images/M/MV5BYmE5Yjg0MzktYzgzMi00YTFiLWJjYTItY2M5MmI1ODI4MDY3XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX140_CR0,0,140,209_AL_.jpg";
             ViewBag.g7 = "https://m.media-amazon.com/images/M/MV5BMTcxMjUwNjQ5N15BMl5BanBnXkFtZTgwNjk4MzI4NjM@._V1_UY209_CR0,0,140,209_AL_.jpg";
-
-
-
-
-
-
-
-
             ViewBag.Widows = "https://m.media-amazon.com/images/M/MV5BMjM3ODc5NDEyOF5BMl5BanBnXkFtZTgwMTI4MDcxNjM@._V1_UX140_CR0,0,140,209_AL_.jpg";
+            return View(new Movies());
+        }
+        public ActionResult Top10()
+        {
+            return View(new Movies());
+        }
+
+        public ActionResult Genre()
+        {
             return View(new Movies());
         }
     }

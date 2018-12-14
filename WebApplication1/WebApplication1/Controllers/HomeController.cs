@@ -13,14 +13,6 @@ namespace WebApplication1.Controllers
             return View();
         }
 
-        public ActionResult Top10()
-        {
-            return View();
-        }
 
-        public ActionResult Genre()
-        {
-            return View();
-        }
     }
 }
