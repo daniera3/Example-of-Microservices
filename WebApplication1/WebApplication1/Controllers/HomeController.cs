@@ -13,10 +13,8 @@ namespace WebApplication1.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Top10()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
