@@ -7,6 +7,15 @@ namespace WebApplication1.Models
 {
     public class Movies
     {
+        public string id { get; set; }
+        public Movies()
+        {
+            id = " ";
+        }
+        public Movies (string A)
+        {
+            id = A;
+        }
 
     }
 }
