@@ -22,8 +22,6 @@ namespace WebApplication1.Controllers
 
         public ActionResult Genre()
         {
-            ViewBag.Message = "Your genre page.";
-
             return View();
         }
     }
