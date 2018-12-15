@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -47,6 +48,8 @@ namespace WebApplication1.Controllers
         public ActionResult _tryaddmovie()
         {
             ViewBag.t = "https://m.media-amazon.com/images/M/MV5BMjMzMzQ0NzI5Nl5BMl5BanBnXkFtZTgwNjc2NTY0NjM@._V1_UY209_CR0,0,140,209_AL_.jpg";
+            DBmovies db=new DBmovies();
+            db.getmovies();
             return View();
         }
     }

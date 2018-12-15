@@ -19,10 +19,6 @@ namespace WebApplication1.Models
         public imge Img { get; }
         public Director dir { get; }
 
-
-
-        
-
         public class Director
         {
             public int idmovie { get; set; }
