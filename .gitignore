@@ -1,3 +1,6 @@
 
 *.ide-wal
 WebApplication1/WebApplication1/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+WebApplication1/WebApplication1/App_Data/aspnet-WebApplication1-20181211112737_log.ldf
+WebApplication1/.vs/WebApplication1/v15/.suo
+WebApplication1/WebApplication1/App_Data/aspnet-WebApplication1-20181211112737.mdf
