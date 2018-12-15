@@ -45,12 +45,12 @@ namespace WebApplication1.Controllers
             return View(new Movies());
 
         }
-        public ActionResult _tryaddmovie()
+        public ActionResult _tryaddmovie(Movies obj)
         {
-            ViewBag.t = "https://m.media-amazon.com/images/M/MV5BMjMzMzQ0NzI5Nl5BMl5BanBnXkFtZTgwNjc2NTY0NjM@._V1_UY209_CR0,0,140,209_AL_.jpg";
-            DBmovies db=new DBmovies();
-            db.getmovies();
-            return View();
+            DBmovies r = new DBmovies();
+
+                return View(r.arr[0]);
+
         }
     }
 

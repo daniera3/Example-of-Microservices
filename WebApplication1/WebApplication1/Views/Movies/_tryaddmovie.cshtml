@@ -13,25 +13,27 @@
                             <a>
                                 <div class="hover-over-image zero-z-index">
                                     <img class="poster shadowed"
-                                         height="209"
-                                         width="140"
-                                         alt="Spider-Man: Into the Spider-Verse (2018) Poster"
-                                         title="Spider-Man: Into the Spider-Verse (2018)"
-                                         src=@ViewBag.t />
+                                         height=@Model.Img.height
+                                         width=@Model.Img.width
+                                         alt=@Model.Img.alt
+                                         title=@Model.Img.title
+                                         src=@Model.Img.img />
                                 </div>
                             </a>
                         </div>
                     </td>
                     <td class="overview-top">
                         <h4>
-                            <a title="Spider-Man: Into the Spider-Verse (2018)">Spider-Man: Into the Spider-Verse (2018)</a>
+                            <a title="@Model.title">@Model.title</a>
                         </h4>
                         <p class="cert-runtime-genre">
                             <img alt="Certificate PG"
                                  class="absmiddle certimage"
-                                 src="https://m.media-amazon.com/images/G/01/imdb/images/certificates/us/pg-1313470000._CB470042461_.png" />
-                            <time datetime="PT117M">117 min</time>
+                                 src=@Model.Certificate />
+
+                            <time datetime="PT117M">@Model.time min</time>
                             &nbsp;&nbsp;-&nbsp;&nbsp;
+             @*need do more=======================================================================================================================*@
                             <span>Animation</span>
                             <span class="ghost">|</span>
                             <span>Action</span>
@@ -45,7 +47,7 @@
                             <span>Sci-Fi</span>
                         </p>
                         <div class="rating_txt">
-                            <span class="metascore favorable">87 </span>
+                            <span class="metascore favorable">@Model.rating </span>
                             Metascore
                         </div>
                         <div class="outline">
