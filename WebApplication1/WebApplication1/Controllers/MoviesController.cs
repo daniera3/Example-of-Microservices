@@ -17,7 +17,7 @@ namespace WebApplication1.Controllers
             ViewBag.d = "https://m.media-amazon.com/images/M/MV5BMjMyNzExNzQ5OV5BMl5BanBnXkFtZTgwNjM2MjIxNjM@._V1_UX140_CR0,0,140,209_AL_.jpg";
             ViewBag.c = "https://m.media-amazon.com/images/M/MV5BOGQzZDM0NGUtZGE1NS00ZjQwLTk0N2EtMWI0NTgxYTkwYWQ4XkEyXkFqcGdeQXVyNDMzMzI5MjM@._V1_UX140_CR0,0,140,209_AL_.jpg";
             ViewBag.e = "https://ia.media-imdb.com/images/M/MV5BMzcwMDU4NDAyMl5BMl5BanBnXkFtZTcwODAyODQ5Ng@@._V1._SY340_CR2,3,410,315_.jpg";
-            ViewBag.r= "https://ia.media-imdb.com/images/M/MV5BMTMzMTk0MzIwOV5BMl5BanBnXkFtZTcwMjY0NzYxNw@@._V1._SX250_CR0,0,250,315_.jpg";
+            ViewBag.r = "https://ia.media-imdb.com/images/M/MV5BMTMzMTk0MzIwOV5BMl5BanBnXkFtZTcwMjY0NzYxNw@@._V1._SX250_CR0,0,250,315_.jpg";
             ViewBag.t = "https://m.media-amazon.com/images/M/MV5BMjMzMzQ0NzI5Nl5BMl5BanBnXkFtZTgwNjc2NTY0NjM@._V1_UY209_CR0,0,140,209_AL_.jpg";
             ViewBag.y = "https://m.media-amazon.com/images/M/MV5BNjk1Njk3YjctMmMyYS00Y2I4LThhMzktN2U0MTMyZTFlYWQ5XkEyXkFqcGdeQXVyODM2ODEzMDA@._V1_UY209_CR34,0,140,209_AL_.jpg";
             ViewBag.s = "https://m.media-amazon.com/images/M/MV5BMTc1OTc5NzA4OF5BMl5BanBnXkFtZTgwOTAzMzE2NjM@._V1_UY209_CR0,0,140,209_AL_.jpg";
@@ -42,6 +42,13 @@ namespace WebApplication1.Controllers
         public ActionResult Genre()
         {
             return View(new Movies());
+
+        }
+        public ActionResult _tryaddmovie()
+        {
+            ViewBag.t = "https://m.media-amazon.com/images/M/MV5BMjMzMzQ0NzI5Nl5BMl5BanBnXkFtZTgwNjc2NTY0NjM@._V1_UY209_CR0,0,140,209_AL_.jpg";
+            return View();
         }
     }
+
 }
