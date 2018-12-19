@@ -1,9 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{CA016F9F-9408-4478-AEA2-A3520A111A64}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B71F84E1-A6DF-4F83-BA64-CE5A5EFED4FD} = {B71F84E1-A6DF-4F83-BA64-CE5A5EFED4FD}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wecandothis", "wecandothis\wecandothis.csproj", "{B71F84E1-A6DF-4F83-BA64-CE5A5EFED4FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +20,15 @@ Global
 		{CA016F9F-9408-4478-AEA2-A3520A111A64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA016F9F-9408-4478-AEA2-A3520A111A64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA016F9F-9408-4478-AEA2-A3520A111A64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B71F84E1-A6DF-4F83-BA64-CE5A5EFED4FD}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{B71F84E1-A6DF-4F83-BA64-CE5A5EFED4FD}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{B71F84E1-A6DF-4F83-BA64-CE5A5EFED4FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B71F84E1-A6DF-4F83-BA64-CE5A5EFED4FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {13C53193-8637-429D-A385-E482B2899D97}
 	EndGlobalSection
 EndGlobal

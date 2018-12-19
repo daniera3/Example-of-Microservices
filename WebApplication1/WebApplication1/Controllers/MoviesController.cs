@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -47,9 +48,35 @@ namespace WebApplication1.Controllers
         }
         public ActionResult _tryaddmovie(Movies obj)
         {
-            DBmovies r = new DBmovies();
+            string a;
+            try { 
+            var proc = new Process
+            {
+                StartInfo = new ProcessStartInfo
+                {
+                    FileName = "D:\\Example-of-Microservices\\WebApplication1\\wecandothis\\bin\\Debug\\wecandothis.exe",
+                    Arguments= "Data Source=(LocalDb)\\MSSQLLocalDB;AttachDbFilename=D:\\Example-of-Microservices\\WebApplication1\\WebApplication1\\App_Data\\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True",
+                    UseShellExecute = false,
+                    RedirectStandardOutput = true,
+                    CreateNoWindow = true
+                }
+            };
+            proc.Start();
 
-                return View(r.arr[0]);
+            while (!proc.StandardOutput.EndOfStream)
+            {
+                string line = proc.StandardOutput.ReadLine();
+                    Console.WriteLine(line);
+                // do something with line
+            }
+            }
+            catch(Exception ex)
+            {
+                a = ex.Message;
+            }
+            DBmovies arr = new DBmovies();
+            return View(arr.arr[0]);
+
 
         }
     }

@@ -159,7 +159,6 @@ D:\Example-of-Microservices\WebApplication1\WebApplication1\bin\Microsoft.Owin.S
 D:\Example-of-Microservices\WebApplication1\WebApplication1\bin\Microsoft.Owin.Security.Google.xml
 D:\Example-of-Microservices\WebApplication1\WebApplication1\bin\Microsoft.Owin.Security.Twitter.xml
 D:\Example-of-Microservices\WebApplication1\WebApplication1\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-D:\Example-of-Microservices\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csprojAssemblyReference.cache
 D:\Example-of-Microservices\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csproj.CoreCompileInputs.cache
 D:\Example-of-Microservices\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csproj.CopyComplete
 D:\Example-of-Microservices\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
@@ -330,3 +329,4 @@ C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApp
 C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csproj.CopyComplete
 C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
+D:\Example-of-Microservices\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csprojAssemblyReference.cache
