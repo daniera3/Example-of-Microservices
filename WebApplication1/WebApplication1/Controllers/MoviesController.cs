@@ -1,8 +1,10 @@
 ﻿
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -35,49 +37,60 @@ namespace WebApplication1.Controllers
             ViewBag.g6 = "https://m.media-amazon.com/images/M/MV5BYmE5Yjg0MzktYzgzMi00YTFiLWJjYTItY2M5MmI1ODI4MDY3XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX140_CR0,0,140,209_AL_.jpg";
             ViewBag.g7 = "https://m.media-amazon.com/images/M/MV5BMTcxMjUwNjQ5N15BMl5BanBnXkFtZTgwNjk4MzI4NjM@._V1_UY209_CR0,0,140,209_AL_.jpg";
             ViewBag.Widows = "https://m.media-amazon.com/images/M/MV5BMjM3ODc5NDEyOF5BMl5BanBnXkFtZTgwMTI4MDcxNjM@._V1_UX140_CR0,0,140,209_AL_.jpg";
-            return View(new Movies());
+
+
+            string a = "Data Source=(localdb)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|aspnet-WebApplication1-20181211112737.mdf;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(a);
+            string path = @"D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\allMovies.json";
+            a = connection.ConnectionString + " " + path;
+            try
+            {
+                Process process = new Process();
+                process.StartInfo.FileName = "D:\\Example-of-Microservices\\WebApplication1\\wecandothis\\candoit\\bin\\Debug\\candoit.exe";
+                process.StartInfo.Arguments = a;
+                process.StartInfo.UseShellExecute = false;
+                process.StartInfo.RedirectStandardOutput = true;
+                process.StartInfo.RedirectStandardError = true;
+                process.Start();
+                /* Read the output (or the error)
+                string output = process.StandardOutput.ReadToEnd();
+                Console.WriteLine(output);
+                string err = process.StandardError.ReadToEnd();
+                Console.WriteLine(err);
+                process.WaitForExit();
+                */
+
+            }
+            catch (Exception ex)
+            {
+                a = ex.Message;
+            }
+
+            using (StreamReader r = new StreamReader(path))
+            {
+                string json = r.ReadToEnd();
+                List<Movies> Movie = JsonConvert.DeserializeObject<List<Movies>>(json);
+                ViewBag.moviesList = Movie;
+            }
+            return View();
         }
         public ActionResult Top10()
         {
-            return View(new Movies());
+            return View();
         }
 
         public ActionResult Genre()
         {
-            return View(new Movies());
+            return View();
 
         }
         public ActionResult _tryaddmovie(Movies obj)
         {
-            string a = "Data Source=(localdb)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|aspnet-WebApplication1-20181211112737.mdf;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(a);
-            try {
-                var proc = new Process
-                {
-                    StartInfo = new ProcessStartInfo
-                    {
-                        FileName = "D:\\Example-of-Microservices\\WebApplication1\\wecandothis\\bin\\Debug\\wecandothis.exe",
-                        Arguments = connection.ConnectionString,
-                    UseShellExecute = false,
-                    RedirectStandardOutput = true,
-                    CreateNoWindow = true
-                }
-            };
-            proc.Start();
 
-            while (!proc.StandardOutput.EndOfStream)
-            {
-                string line = proc.StandardOutput.ReadLine();
-                    Console.WriteLine(line);
-                // do something with line
-            }
-            }
-            catch(Exception ex)
-            {
-                a = ex.Message;
-            }
-            DBmovies arr = new DBmovies();
-            return View(arr.arr[0]);
+
+
+         
+            return View();
 
 
         }

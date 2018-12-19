@@ -1,7 +1,10 @@
-C:\Users\daniera3\Documents\GitHub\Example-of-Microservices\WebApplication1\wecandothis\candoit\bin\Debug\candoit.exe.config
-C:\Users\daniera3\Documents\GitHub\Example-of-Microservices\WebApplication1\wecandothis\candoit\bin\Debug\candoit.exe
-C:\Users\daniera3\Documents\GitHub\Example-of-Microservices\WebApplication1\wecandothis\candoit\bin\Debug\candoit.pdb
-C:\Users\daniera3\Documents\GitHub\Example-of-Microservices\WebApplication1\wecandothis\candoit\obj\Debug\candoit.csprojAssemblyReference.cache
-C:\Users\daniera3\Documents\GitHub\Example-of-Microservices\WebApplication1\wecandothis\candoit\obj\Debug\candoit.csproj.CoreCompileInputs.cache
-C:\Users\daniera3\Documents\GitHub\Example-of-Microservices\WebApplication1\wecandothis\candoit\obj\Debug\candoit.exe
-C:\Users\daniera3\Documents\GitHub\Example-of-Microservices\WebApplication1\wecandothis\candoit\obj\Debug\candoit.pdb
+D:\Example-of-Microservices\WebApplication1\wecandothis\candoit\bin\Debug\candoit.exe.config
+D:\Example-of-Microservices\WebApplication1\wecandothis\candoit\bin\Debug\candoit.exe
+D:\Example-of-Microservices\WebApplication1\wecandothis\candoit\bin\Debug\candoit.pdb
+D:\Example-of-Microservices\WebApplication1\wecandothis\candoit\obj\Debug\candoit.csproj.CoreCompileInputs.cache
+D:\Example-of-Microservices\WebApplication1\wecandothis\candoit\obj\Debug\candoit.exe
+D:\Example-of-Microservices\WebApplication1\wecandothis\candoit\obj\Debug\candoit.pdb
+D:\Example-of-Microservices\WebApplication1\wecandothis\candoit\obj\Debug\candoit.csprojAssemblyReference.cache
+D:\Example-of-Microservices\WebApplication1\wecandothis\candoit\bin\Debug\Newtonsoft.Json.dll
+D:\Example-of-Microservices\WebApplication1\wecandothis\candoit\bin\Debug\StreamJsonRpc.dll
+D:\Example-of-Microservices\WebApplication1\wecandothis\candoit\obj\Debug\candoit.csproj.CopyComplete

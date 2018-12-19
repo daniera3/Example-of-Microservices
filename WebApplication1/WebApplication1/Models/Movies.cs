@@ -8,62 +8,98 @@ namespace WebApplication1.Models
 {
     public class Movies
     {
-        public string id { get; set; }
-        public Movies() { id = " "; }
-        public Movies(int idmovie,string t, int idimg , string time, int rating , string outline, string Certificate )
+
+        public Movies(int idmovie, string t, int idimg, string time, int rating, string Certificate, string outline)
         {
-            this.idmovie = idmovie;
-            this.title = t;
-            this.idimg = idimg;
-            this.time = time;
-            this.rating = rating;
-            this.outline = outline;
+            this.Idmovie = idmovie;
+            this.Title = t;
+            this.Idimg = idimg;
+            this.Time = time;
+            this.Rating = rating;
+            this.Outline = outline;
             this.Certificate = Certificate;
-            this.str = new ArrayList();
-            this.dir = new ArrayList();
-            this.Ganer = new ArrayList();
+
+            this.Str = new List<Star>();
+            this.Dir = new List<Director>();
+            this.Ganer = new List<Ganers>();
         }
-        public string outline { get; set; }
-        public int idmovie { get; set; }
-        public string title { get; set; }
-        public int idimg { get; set; }
-        public string time { get; set; }
-        public imge Img { get; set; }
-        public int rating { get; set; }
+
+        public void Printall()
+        {
+            Console.Write(Title + " " + Time + " " + Rating.ToString() + " " + Certificate + " " + Outline + " ");
+            foreach (Star s in Str)
+                s.PrintAll();
+            foreach (Director s in Dir)
+                s.printAll();
+            foreach (Ganers s in Ganer)
+                s.PrintAll();
+
+        }
+        public Imge Img { get; set; }
+        public string Outline { get; set; }
+        public int Idmovie { get; set; }
+        public string Title { get; set; }
+        public int Idimg { get; set; }
+        public string Time { get; set; }
+        public int Rating { get; set; }
         public string Certificate { get; set; }
 
-        public ArrayList str { get; }
-        public ArrayList Ganer { get; set; }
-        public ArrayList dir { get;}
-        
+        public List<Star> Str { get; set; }
+        public List<Ganers> Ganer { get; set; }
+        public List<Director> Dir { get; set; }
+
     }
 
     public class Director
     {
         public int idmovie { get; set; }
         public string NameDirector { get; set; }
+        public void printAll()
+        {
+            Console.Write(NameDirector + " ");
 
-        public Director(string url,int id)
+        }
+        public Director(string url, int id)
         {
             idmovie = id;
             NameDirector = url;
         }
     }
 
-    public class star
+    public class Ganers
     {
-        public int idmovie { get; set; }
-        public string Namestar { get; set; }
-
-        public star(string url,int id )
+        public int Idmovie { get; set; }
+        public string NameGaner { get; set; }
+        public void PrintAll()
         {
-            idmovie = id;
+            Console.Write(NameGaner + " ");
+
+        }
+        public Ganers(string url, int id)
+        {
+            Idmovie = id;
+            NameGaner = url;
+        }
+    }
+
+    public class Star
+    {
+        public int Idmovie { get; set; }
+        public string Namestar { get; set; }
+        public void PrintAll()
+        {
+            Console.Write(Namestar + " ");
+
+        }
+        public Star(string url, int id)
+        {
+            Idmovie = id;
             Namestar = url;
         }
     }
 
 
-    public class imge
+    public class Imge
     {
         public int idimg { get; set; }
         public string img { get; set; }
@@ -71,7 +107,12 @@ namespace WebApplication1.Models
         public string alt { get; set; }
         public string width { get; set; }
         public string height { get; set; }
-        public imge(int id, string url, string titl, string alt, string width, string height)
+        public void printAll()
+        {
+            Console.Write(img + " " + title + " " + alt + " " + width + " " + height + " ");
+
+        }
+        public Imge(int id, string url, string titl, string alt, string width, string height)
         {
             idimg = id;
             img = url;
