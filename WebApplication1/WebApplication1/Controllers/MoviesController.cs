@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
 using System.Web;
@@ -48,14 +49,15 @@ namespace WebApplication1.Controllers
         }
         public ActionResult _tryaddmovie(Movies obj)
         {
-            string a;
-            try { 
-            var proc = new Process
-            {
-                StartInfo = new ProcessStartInfo
+            string a = "Data Source=(localdb)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|aspnet-WebApplication1-20181211112737.mdf;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(a);
+            try {
+                var proc = new Process
                 {
-                    FileName = "D:\\Example-of-Microservices\\WebApplication1\\wecandothis\\bin\\Debug\\wecandothis.exe",
-                    Arguments= "Data Source=(LocalDb)\\MSSQLLocalDB;AttachDbFilename=D:\\Example-of-Microservices\\WebApplication1\\WebApplication1\\App_Data\\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True",
+                    StartInfo = new ProcessStartInfo
+                    {
+                        FileName = "D:\\Example-of-Microservices\\WebApplication1\\wecandothis\\bin\\Debug\\wecandothis.exe",
+                        Arguments = connection.ConnectionString,
                     UseShellExecute = false,
                     RedirectStandardOutput = true,
                     CreateNoWindow = true

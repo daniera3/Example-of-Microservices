@@ -1,7 +1,0 @@
-D:\Example-of-Microservices\WebApplication1\wecandothis\bin\Release\wecandothis.exe.config
-D:\Example-of-Microservices\WebApplication1\wecandothis\bin\Release\wecandothis.exe
-D:\Example-of-Microservices\WebApplication1\wecandothis\bin\Release\wecandothis.pdb
-D:\Example-of-Microservices\WebApplication1\wecandothis\obj\Release\wecandothis.csproj.CoreCompileInputs.cache
-D:\Example-of-Microservices\WebApplication1\wecandothis\obj\Release\wecandothis.exe
-D:\Example-of-Microservices\WebApplication1\wecandothis\obj\Release\wecandothis.pdb
-D:\Example-of-Microservices\WebApplication1\wecandothis\obj\Release\wecandothis.csprojAssemblyReference.cache
