@@ -115,6 +115,7 @@ namespace WebApplication1.Controllers
             {
 
             }
+            ViewBag.num = num;
             return View();
             
         }

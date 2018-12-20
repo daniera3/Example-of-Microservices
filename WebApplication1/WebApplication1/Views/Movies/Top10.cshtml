@@ -1,5 +1,6 @@
 ﻿@using WebApplication1.Models;
 @using System.Collections.Generic;
+
 @{
     ViewBag.Title = "Top";
     List<Movies> movie = ViewBag.moviesList;
@@ -9,7 +10,7 @@
     <div id="main">
         <div class="article listo nm">
             <h1>@ViewBag.Title</h1>
-            <h4>Top @TempData["num"] rated movies</h4>
+            <h4>Top @ViewBag.num rated movies</h4>
             <div class="header">&nbsp;</div>
             <div class="list detail sub-list">
                 @{ foreach (Movies m in movie)
