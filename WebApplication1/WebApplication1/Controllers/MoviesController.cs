@@ -39,31 +39,30 @@ namespace WebApplication1.Controllers
             ViewBag.Widows = "https://m.media-amazon.com/images/M/MV5BMjM3ODc5NDEyOF5BMl5BanBnXkFtZTgwMTI4MDcxNjM@._V1_UX140_CR0,0,140,209_AL_.jpg";
 
 
-            string a = "Data Source=(localdb)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|aspnet-WebApplication1-20181211112737.mdf;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(a);
+
             string path = @"D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\allMovies.json";
-            a = connection.ConnectionString + " " + path;
+            //string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
             try
             {
                 Process process = new Process();
                 process.StartInfo.FileName = "D:\\Example-of-Microservices\\WebApplication1\\wecandothis\\candoit\\bin\\Debug\\candoit.exe";
-                process.StartInfo.Arguments = a;
+                process.StartInfo.Arguments = path;
                 process.StartInfo.UseShellExecute = false;
                 process.StartInfo.RedirectStandardOutput = true;
                 process.StartInfo.RedirectStandardError = true;
                 process.Start();
-                /* Read the output (or the error)
+                 //Read the output (or the error)
                 string output = process.StandardOutput.ReadToEnd();
                 Console.WriteLine(output);
                 string err = process.StandardError.ReadToEnd();
                 Console.WriteLine(err);
                 process.WaitForExit();
-                */
+                
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
-                a = ex.Message;
+               
             }
 
             using (StreamReader r = new StreamReader(path))
@@ -84,15 +83,9 @@ namespace WebApplication1.Controllers
             return View();
 
         }
-        public ActionResult _tryaddmovie(Movies obj)
+        public ActionResult _tryaddmovie()
         {
-
-
-
-         
             return View();
-
-
         }
     }
 
