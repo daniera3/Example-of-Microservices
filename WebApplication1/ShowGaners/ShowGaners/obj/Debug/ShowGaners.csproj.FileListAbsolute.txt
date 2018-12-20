@@ -7,4 +7,3 @@ D:\Example-of-Microservices\WebApplication1\ShowGaners\ShowGaners\obj\Debug\Show
 D:\Example-of-Microservices\WebApplication1\ShowGaners\ShowGaners\obj\Debug\ShowGaners.csproj.CopyComplete
 D:\Example-of-Microservices\WebApplication1\ShowGaners\ShowGaners\obj\Debug\ShowGaners.exe
 D:\Example-of-Microservices\WebApplication1\ShowGaners\ShowGaners\obj\Debug\ShowGaners.pdb
-D:\Example-of-Microservices\WebApplication1\ShowGaners\ShowGaners\obj\Debug\ShowGaners.csprojAssemblyReference.cache
