@@ -41,12 +41,13 @@ namespace WebApplication1.Controllers
 
 
             string path = @"D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\allMovies.json";
-            //string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
+
+            string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
             try
             {
                 Process process = new Process();
                 process.StartInfo.FileName = "D:\\Example-of-Microservices\\WebApplication1\\wecandothis\\candoit\\bin\\Debug\\candoit.exe";
-                process.StartInfo.Arguments = path;
+                process.StartInfo.Arguments = DataBacePath+" " + path;
                 process.StartInfo.UseShellExecute = false;
                 process.StartInfo.RedirectStandardOutput = true;
                 process.StartInfo.RedirectStandardError = true;
@@ -83,12 +84,12 @@ namespace WebApplication1.Controllers
             else
              num = TempData["num"].ToString();
             string path = @"D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\TopMovies.json";
-            //string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
+            string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
             try
             {
                 Process process = new Process();
                 process.StartInfo.FileName = "D:\\Example-of-Microservices\\WebApplication1\\TopMovies\\TopMovies\\bin\\Debug\\TopMovies.exe";
-                process.StartInfo.Arguments = path + " " + num;
+                process.StartInfo.Arguments = DataBacePath + " "+ path + " " +num;
                 process.StartInfo.UseShellExecute = false;
                 process.StartInfo.RedirectStandardOutput = true;
                 process.StartInfo.RedirectStandardError = true;
