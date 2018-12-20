@@ -532,7 +532,7 @@ if(window.ue&&uet) { uet('bb'); }
                     <li class="spacer"></li>
                     <li class="css_nav_item" id="navNameMenu">
                         <p class="navCategory">
-                            <a href="/Movies/Top10">top 10</a>
+                            <a  @{TempData["num"] = "10";} href="/Movies/Top10" >top 10</a>
                         </p>
                         <span class="downArrow"></span>
                         <div id="navMenu2" class="sub_nav">
@@ -549,10 +549,10 @@ if(window.ue&&uet) { uet('bb'); }
                                 </div>
                             </div>
                             <div class="subNavListContainer">
-                                <h5>CELEBS</h5>
+                                <h5>TOP</h5>
                                 <ul>
                                     <li>
-                                        <a href="/search/name?birth_monthday=12-14&refine=birth_monthday&ref_=nv_cel_brn">Born Today</a>
+                                        <a @{TempData["num"] = "5";} href="/Movies/Top10">Top 5</a>
                                     </li>
                                     <li>
                                         <a href="/news/celebrity?ref_=nv_cel_nw">Celebrity News</a>
@@ -660,7 +660,7 @@ if(window.ue&&uet) { uet('bb'); }
         <script>
             if (typeof uet == 'function') {
                 uet("ne");
-            }
+                                    }
         </script>
         <!-- no content received for slot: navstrip -->
         <!-- begin INJECTED_NAVSTRIP -->
@@ -669,7 +669,7 @@ if(window.ue&&uet) { uet('bb'); }
                 doWithAds(function () {
                     if ('injected_slot' != 'injected_slot') {
                         ad_utils.register_ad('injected_navstrip');
-                    }
+                                }
                 });
             </script>
             <iframe allowtransparency="true" class="yesScript" data-dart-params="#doubleclick;u=616149922219;ord=616149922219?" frameborder="0" id="injected_navstrip" marginwidth="0" marginheight="0" name="injected_navstrip" onload="doWithAds.call(this, function(){ ad_utils.on_ad_load(this); });" scrolling="no" data-original-width="0" data-original-height="0" width="0" height="0"></iframe>

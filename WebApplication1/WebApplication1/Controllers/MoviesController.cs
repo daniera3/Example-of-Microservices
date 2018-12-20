@@ -59,11 +59,7 @@ namespace WebApplication1.Controllers
                 process.WaitForExit();
                 
 
-            }
-            catch (Exception )
-            {
-               
-            }
+
 
             using (StreamReader r = new StreamReader(path))
             {
@@ -71,11 +67,55 @@ namespace WebApplication1.Controllers
                 List<Movies> Movie = JsonConvert.DeserializeObject<List<Movies>>(json);
                 ViewBag.moviesList = Movie;
             }
+            }
+            catch (Exception)
+            {
+
+            }
             return View();
         }
+
         public ActionResult Top10()
         {
+            string num;
+            if (TempData["num"] == null)
+                num = "10";
+            else
+             num = TempData["num"].ToString();
+            string path = @"D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\TopMovies.json";
+            //string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
+            try
+            {
+                Process process = new Process();
+                process.StartInfo.FileName = "D:\\Example-of-Microservices\\WebApplication1\\TopMovies\\TopMovies\\bin\\Debug\\TopMovies.exe";
+                process.StartInfo.Arguments = path + " " + num;
+                process.StartInfo.UseShellExecute = false;
+                process.StartInfo.RedirectStandardOutput = true;
+                process.StartInfo.RedirectStandardError = true;
+                process.Start();
+                //Read the output (or the error)
+                string output = process.StandardOutput.ReadToEnd();
+                Console.WriteLine(output);
+                string err = process.StandardError.ReadToEnd();
+                Console.WriteLine(err);
+                process.WaitForExit();
+
+
+
+
+            using (StreamReader r = new StreamReader(path))
+            {
+                string json = r.ReadToEnd();
+                List<Movies> Movie = JsonConvert.DeserializeObject<List<Movies>>(json);
+                ViewBag.moviesList = Movie;
+            }
+            }
+            catch (Exception)
+            {
+
+            }
             return View();
+            
         }
 
         public ActionResult Genre()
