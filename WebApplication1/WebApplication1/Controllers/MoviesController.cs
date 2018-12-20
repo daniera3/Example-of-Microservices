@@ -122,6 +122,40 @@ namespace WebApplication1.Controllers
 
         public ActionResult Genre()
         {
+
+            string path = @"D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\allGaners.json";
+
+            string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
+            try
+            {
+                Process process = new Process();
+                process.StartInfo.FileName = @"D:\Example-of-Microservices\WebApplication1\ShowGaners\ShowGaners\bin\Debug\ShowGaners.exe";
+                process.StartInfo.Arguments = DataBacePath + " " + path;
+                process.StartInfo.UseShellExecute = false;
+                process.StartInfo.RedirectStandardOutput = true;
+                process.StartInfo.RedirectStandardError = true;
+                process.Start();
+                //Read the output (or the error)
+                string output = process.StandardOutput.ReadToEnd();
+                Console.WriteLine(output);
+                string err = process.StandardError.ReadToEnd();
+                Console.WriteLine(err);
+                process.WaitForExit();
+
+
+
+
+                using (StreamReader r = new StreamReader(path))
+                {
+                    string json = r.ReadToEnd();
+                    List<Ganers> Ganer = JsonConvert.DeserializeObject<List<Ganers>>(json);
+                    ViewBag.GanersList = Ganer;
+                }
+            }
+            catch (Exception)
+            {
+
+            }
             return View();
 
         }

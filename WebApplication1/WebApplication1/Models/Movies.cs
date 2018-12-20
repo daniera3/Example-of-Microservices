@@ -24,17 +24,6 @@ namespace WebApplication1.Models
             this.Ganer = new List<Ganers>();
         }
 
-        public void Printall()
-        {
-            Console.Write(Title + " " + Time + " " + Rating.ToString() + " " + Certificate + " " + Outline + " ");
-            foreach (Star s in Str)
-                s.PrintAll();
-            foreach (Director s in Dir)
-                s.printAll();
-            foreach (Ganers s in Ganer)
-                s.PrintAll();
-
-        }
         public Imge Img { get; set; }
         public string Outline { get; set; }
         public int Idmovie { get; set; }
@@ -70,16 +59,18 @@ namespace WebApplication1.Models
     {
         public int Idmovie { get; set; }
         public string NameGaner { get; set; }
-        public void PrintAll()
-        {
-            Console.Write(NameGaner + " ");
-
-        }
+        public NameMoviesAndIMG NMAndIMG { get; set; }
         public Ganers(string url, int id)
         {
+            NMAndIMG = new NameMoviesAndIMG();
             Idmovie = id;
             NameGaner = url;
         }
+    }
+    public class NameMoviesAndIMG
+    {
+        public string NameMovies { get; set; }
+        public string NameIMG { get; set; }
     }
 
     public class Star

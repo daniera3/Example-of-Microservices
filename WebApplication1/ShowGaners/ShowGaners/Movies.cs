@@ -56,14 +56,20 @@ using System.Web;
     {
         public int Idmovie { get; set; }
         public string NameGaner { get; set; }
-       
-        public Ganers(string url, int id)
+        public NameMoviesAndIMG NMAndIMG { get; set; }
+    public Ganers(string url, int id)
         {
+            NMAndIMG = new NameMoviesAndIMG();
             Idmovie = id;
             NameGaner = url;
         }
     }
-
+public class NameMoviesAndIMG
+{
+    public string NameMovies { get; set; }
+    public string NameIMG { get; set; }
+    public int Idmovie { get; set; }
+}
     public class Star
     {
         public int Idmovie { get; set; }
