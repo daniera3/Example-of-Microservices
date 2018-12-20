@@ -1,1 +1,1 @@
-Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=C:\Users\97254\Documents\microserviceProject\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True
+jdbc:sqlserver://localhost:1433;databaseName=TestDB;integratedSecurity=true;

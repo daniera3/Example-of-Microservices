@@ -1,18 +1,19 @@
 
 import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import com.microsoft.sqlserver.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+
 
 public class Retriver {
 
@@ -55,7 +56,7 @@ public class Retriver {
 				log.write("cannot create outputfile");
 			}
             try {
-				result.write(jsonArray.toString());
+            	result.write(jsonArray.toString());
 				result.close();
 			} catch (IOException e) {
 				
@@ -65,10 +66,9 @@ public class Retriver {
         }
         // Handle any errors that may have occurred.
         catch (SQLException e) {
-        	
-        	log.write("Eror: cannot connect to the server");
+        	System.out.println("got hare?");
+        	e.printStackTrace();
         }
-        
         log.close();
 	}
 
