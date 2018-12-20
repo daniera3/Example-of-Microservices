@@ -18,18 +18,18 @@ using System.Threading.Tasks;
             
             for (i = 0; i < args.Length - 1; i++)
                 DataBacePath += args[i]+" ";
-                // DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
+            
 
                 DBmovies r = new DBmovies(DataBacePath);
 
-                string json = JsonConvert.SerializeObject(r.arr.ToArray());
+                string json = JsonConvert.SerializeObject(r.Arr.ToArray());
 
                 //write string to file
                 System.IO.File.WriteAllText(args[args.Length-1], json);
             }
-            catch (Exception  )
+            catch (Exception ex  )
             {
-            
+           
             Console.WriteLine(args[args.Length-1]);
             Console.WriteLine(DataBacePath);
         }
