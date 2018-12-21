@@ -23,7 +23,7 @@ namespace WebApplication1.Models
             this.Dir = new List<Director>();
             this.Ganer = new List<Ganers>();
         }
-
+        public int TOP { get; set; }
         public Imge Img { get; set; }
         public string Outline { get; set; }
         public int Idmovie { get; set; }
@@ -60,6 +60,7 @@ namespace WebApplication1.Models
         public int Idmovie { get; set; }
         public string NameGaner { get; set; }
         public List<NameMoviesAndIMG> NMAndIMG { get; set; }
+        public Ganers() { }
         public Ganers(string url, int id)
         {
             NMAndIMG = new List<NameMoviesAndIMG>();

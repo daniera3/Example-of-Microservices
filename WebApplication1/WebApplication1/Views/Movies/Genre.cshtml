@@ -1,28 +1,40 @@
 ﻿@using WebApplication1.Models;
 @using System.Collections.Generic;
-
+@model WebApplication1.Models.Ganers
 @{
     ViewBag.Title = "Genres";
     List<Ganers> Ganer = ViewBag.GanersList;
 }
 
 @Html.Partial("_panelSite")
+<script>
+    function myFunction(a) {
+        [
+            @Model.NameGaner=a;
+        ]
+    }
+</script>
 <body id="styleguide-v2" class="fixed">
+
     <div class="article listo nm" style="background-image:url('')">
         <h2>@ViewBag.Title</h2>
         <h4>choose your genre:</h4>
         <table class="table-hover">
             @{foreach (Ganers g in Ganer)
                 {
-                    
+
                     <td>
                     <tr>
-                        <li class="h5">@Html.ActionLink(g.NameGaner, "Genre", "Movies", null, new { @class = "active" })</li>
+
+                        <il  onclick="myFunction(@g.NameGaner)" class="h3">@Html.ActionLink(g.NameGaner, "MoviesPerGaner", "Movies", null, new { @class = "active" })</il>
 
                     </tr>
                     <tr>
+
                         @{foreach (NameMoviesAndIMG n in g.NMAndIMG)
                             {
+
+                                <p class="fixed">
                                 <td>
                             <tr>
                                 <img class="poster shadowed"
@@ -36,16 +48,20 @@
                                 <a class="left">@n.NameMovies</a>
                             </tr>
                             </td>
+
+                            </p>
+
                         }
                         }
+
                         </tr>
                         </td>
-
+                        <br />
                     }
-<br />
+
             }
         </table>
-    </div>
 
+    </div>
 
 </body>
