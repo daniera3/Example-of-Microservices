@@ -1,0 +1,10 @@
+D:\Example-of-Microservices\WebApplication1\TopMovies\TopMovies\bin\Debug\TopMovies.exe.config
+D:\Example-of-Microservices\WebApplication1\TopMovies\TopMovies\bin\Debug\TopMovies.exe
+D:\Example-of-Microservices\WebApplication1\TopMovies\TopMovies\bin\Debug\TopMovies.pdb
+D:\Example-of-Microservices\WebApplication1\TopMovies\TopMovies\bin\Debug\Newtonsoft.Json.dll
+D:\Example-of-Microservices\WebApplication1\TopMovies\TopMovies\bin\Debug\StreamJsonRpc.dll
+D:\Example-of-Microservices\WebApplication1\TopMovies\TopMovies\obj\Debug\TopMovies.csprojAssemblyReference.cache
+D:\Example-of-Microservices\WebApplication1\TopMovies\TopMovies\obj\Debug\TopMovies.csproj.CoreCompileInputs.cache
+D:\Example-of-Microservices\WebApplication1\TopMovies\TopMovies\obj\Debug\TopMovies.csproj.CopyComplete
+D:\Example-of-Microservices\WebApplication1\TopMovies\TopMovies\obj\Debug\TopMovies.exe
+D:\Example-of-Microservices\WebApplication1\TopMovies\TopMovies\obj\Debug\TopMovies.pdb
