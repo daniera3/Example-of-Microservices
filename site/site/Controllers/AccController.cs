@@ -11,7 +11,7 @@ namespace site.Controllers
 {
     public class AccController : Controller
     {
-   
+        
 
 
         public ActionResult Login(Login obj)
@@ -24,7 +24,10 @@ namespace site.Controllers
             Signin d = new Signin();
             string Message = d.Check(obj);
             if (Message == "true")
+            {
+                TempData["Login"] = "true";
                 return RedirectToAction("Index", "Home");
+            }
             ViewBag.error = Message;
             return View("Login", obj);
 
