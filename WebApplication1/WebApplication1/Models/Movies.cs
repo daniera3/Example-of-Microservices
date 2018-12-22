@@ -8,7 +8,13 @@ namespace WebApplication1.Models
 {
     public class Movies
     {
-
+        public Movies()
+        {
+            this.Str = new List<Star>();
+            this.Dir = new List<Director>();
+            this.Ganer = new List<Ganers>();
+            this.Img = new Imge();
+        }
         public Movies(int idmovie, string t, int idimg, string time, int rating, string Certificate, string outline)
         {
             this.Idmovie = idmovie;
@@ -23,18 +29,7 @@ namespace WebApplication1.Models
             this.Dir = new List<Director>();
             this.Ganer = new List<Ganers>();
         }
-
-        public void Printall()
-        {
-            Console.Write(Title + " " + Time + " " + Rating.ToString() + " " + Certificate + " " + Outline + " ");
-            foreach (Star s in Str)
-                s.PrintAll();
-            foreach (Director s in Dir)
-                s.printAll();
-            foreach (Ganers s in Ganer)
-                s.PrintAll();
-
-        }
+        public int TOP { get; set; }
         public Imge Img { get; set; }
         public string Outline { get; set; }
         public int Idmovie { get; set; }
@@ -70,16 +65,21 @@ namespace WebApplication1.Models
     {
         public int Idmovie { get; set; }
         public string NameGaner { get; set; }
-        public void PrintAll()
-        {
-            Console.Write(NameGaner + " ");
-
-        }
+        public List<NameMoviesAndIMG> NMAndIMG { get; set; }
+        public Ganers() { }
         public Ganers(string url, int id)
         {
+            NMAndIMG = new List<NameMoviesAndIMG>();
             Idmovie = id;
             NameGaner = url;
         }
+    }
+    public class NameMoviesAndIMG
+    {
+        public NameMoviesAndIMG(int a, string b, string c) { Idmovie = a; NameMovies = b; NameIMG = c; }
+        public string NameMovies { get; set; }
+        public string NameIMG { get; set; }
+        public int Idmovie { get; set; }
     }
 
     public class Star
@@ -112,6 +112,7 @@ namespace WebApplication1.Models
             Console.Write(img + " " + title + " " + alt + " " + width + " " + height + " ");
 
         }
+        public Imge() { }
         public Imge(int id, string url, string titl, string alt, string width, string height)
         {
             idimg = id;
