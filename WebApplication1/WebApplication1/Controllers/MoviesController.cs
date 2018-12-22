@@ -159,11 +159,9 @@ namespace WebApplication1.Controllers
             return View(new Ganers());
 
         }
-        public ActionResult MoviesPerGaner(Ganers ganer)
+        public ActionResult MoviesPerGaner(string ganer)
         {
-            
-            if (ganer.NameGaner == null)
-                ganer.NameGaner = "Action";
+       
             string path = @"D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\MGaners.json";
 
             string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
@@ -171,7 +169,7 @@ namespace WebApplication1.Controllers
             {
                 Process process = new Process();
                 process.StartInfo.FileName = @"D:\Example-of-Microservices\WebApplication1\MoviesPerGaner\MoviesPerGaner\bin\Debug\MoviesPerGaner.exe";
-                process.StartInfo.Arguments = DataBacePath + " " + path+" "+ganer.NameGaner;
+                process.StartInfo.Arguments = DataBacePath + " " + path+" "+ganer;
                 process.StartInfo.UseShellExecute = false;
                 process.StartInfo.RedirectStandardOutput = true;
                 process.StartInfo.RedirectStandardError = true;
@@ -197,7 +195,7 @@ namespace WebApplication1.Controllers
             {
 
             }
-            return View(ganer);
+            return View();
         }
     }
 

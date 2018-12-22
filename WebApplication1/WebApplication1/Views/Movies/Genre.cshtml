@@ -7,14 +7,8 @@
 }
 
 @Html.Partial("_panelSite")
-<script>
-    function myFunction(a) {
-        [
-            @Model.NameGaner=a;
-        ]
-    }
-</script>
 <body id="styleguide-v2" class="fixed">
+
 
     <div class="article listo nm" style="background-image:url('')">
         <h2>@ViewBag.Title</h2>
@@ -25,9 +19,11 @@
 
                     <td>
                     <tr>
+                        <p>
+                           
+                            <il id="doit" class="h3">  @Html.ActionLink(g.NameGaner, "MoviesPerGaner", "Movies", new { ganer = g.NameGaner }, new { @class = "active" })</il>
 
-                        <il  onclick="myFunction(@g.NameGaner)" class="h3">@Html.ActionLink(g.NameGaner, "MoviesPerGaner", "Movies", null, new { @class = "active" })</il>
-
+                        </p>
                     </tr>
                     <tr>
 
@@ -63,5 +59,10 @@
         </table>
 
     </div>
+    <script>
+        document.getElementById("doit").addEventListener("click", function () {
+            alert(this.innerText);    
+        });
+    </script>
 
 </body>
