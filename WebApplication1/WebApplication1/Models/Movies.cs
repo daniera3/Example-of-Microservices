@@ -8,7 +8,13 @@ namespace WebApplication1.Models
 {
     public class Movies
     {
-
+        public Movies()
+        {
+            this.Str = new List<Star>();
+            this.Dir = new List<Director>();
+            this.Ganer = new List<Ganers>();
+            this.Img = new Imge();
+        }
         public Movies(int idmovie, string t, int idimg, string time, int rating, string Certificate, string outline)
         {
             this.Idmovie = idmovie;
@@ -106,6 +112,7 @@ namespace WebApplication1.Models
             Console.Write(img + " " + title + " " + alt + " " + width + " " + height + " ");
 
         }
+        public Imge() { }
         public Imge(int id, string url, string titl, string alt, string width, string height)
         {
             idimg = id;

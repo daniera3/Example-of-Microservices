@@ -276,6 +276,7 @@
     <Content Include="Views\Movies\Movie.cshtml" />
     <Content Include="Views\Movies\_panelSite.cshtml" />
     <Content Include="Views\Movies\MoviesPerGaner.cshtml" />
+    <Content Include="Views\Movies\CMovie.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

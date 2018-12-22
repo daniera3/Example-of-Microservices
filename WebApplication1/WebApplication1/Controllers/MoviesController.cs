@@ -15,6 +15,38 @@ namespace WebApplication1.Controllers
     public class MoviesController : Controller
     {
         // GET: Movies
+        public ActionResult CMovie(string id)
+        {
+            Movies Cmovie = new Movies() ;
+            try
+            {
+                string path = @"D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\allGaners.json";
+                using (StreamReader r = new StreamReader(path))
+                {
+                    string json = r.ReadToEnd();
+                    List<Ganers> Ganer = JsonConvert.DeserializeObject<List<Ganers>>(json);
+                    TempData["GanersList"] = Ganer;
+                }
+                path = @"D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\allMovies.json";
+                using (StreamReader r = new StreamReader(path))
+                {
+                    string json = r.ReadToEnd();
+                    List<Movies> Movie = JsonConvert.DeserializeObject<List<Movies>>(json);
+                    TempData["MovieList"] = Movie;
+
+                    foreach (Movies mov in Movie)
+                    {
+                        if (mov.Idmovie.ToString() == id)
+                            Cmovie = mov;
+                    }
+                }
+            }
+           
+            catch (Exception) { return View(Cmovie); }
+            return View(Cmovie);
+
+        }
+    
         public ActionResult Movie()
         {
             ViewBag.a = "https://m.media-amazon.com/images/G/01/imdb/images/certificates/us/r-2493392566._CB484113634_.png";
@@ -47,31 +79,40 @@ namespace WebApplication1.Controllers
             {
                 Process process = new Process();
                 process.StartInfo.FileName = "D:\\Example-of-Microservices\\WebApplication1\\wecandothis\\candoit\\bin\\Debug\\candoit.exe";
-                process.StartInfo.Arguments = DataBacePath+" " + path;
+                process.StartInfo.Arguments = DataBacePath + " " + path;
                 process.StartInfo.UseShellExecute = false;
                 process.StartInfo.RedirectStandardOutput = true;
                 process.StartInfo.RedirectStandardError = true;
                 process.Start();
-                 //Read the output (or the error)
+                //Read the output (or the error)
                 string output = process.StandardOutput.ReadToEnd();
                 Console.WriteLine(output);
                 string err = process.StandardError.ReadToEnd();
                 Console.WriteLine(err);
                 process.WaitForExit();
-                
 
 
 
-            using (StreamReader r = new StreamReader(path))
-            {
-                string json = r.ReadToEnd();
-                List<Movies> Movie = JsonConvert.DeserializeObject<List<Movies>>(json);
-                ViewBag.moviesList = Movie;
-            }
+
+                using (StreamReader r = new StreamReader(path))
+                {
+                    string json = r.ReadToEnd();
+                    List<Movies> Movie = JsonConvert.DeserializeObject<List<Movies>>(json);
+                    ViewBag.moviesList = Movie;
+                    TempData["MovieList"] = Movie;
+                }
+
+                path = @"D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\allGaners.json";
+                using (StreamReader r = new StreamReader(path))
+                {
+                    string json = r.ReadToEnd();
+                    List<Ganers> Ganer = JsonConvert.DeserializeObject<List<Ganers>>(json);
+                    TempData["GanersList"] = Ganer;
+                }
             }
             catch (Exception)
             {
-
+                return View();
             }
             return View();
         }
@@ -88,7 +129,7 @@ namespace WebApplication1.Controllers
             {
                 Process process = new Process();
                 process.StartInfo.FileName = "D:\\Example-of-Microservices\\WebApplication1\\TopMovies\\TopMovies\\bin\\Debug\\TopMovies.exe";
-                process.StartInfo.Arguments = DataBacePath + " "+ path + " " +num;
+                process.StartInfo.Arguments = DataBacePath + " " + path + " " + num;
                 process.StartInfo.UseShellExecute = false;
                 process.StartInfo.RedirectStandardOutput = true;
                 process.StartInfo.RedirectStandardError = true;
@@ -103,16 +144,31 @@ namespace WebApplication1.Controllers
 
 
 
-            using (StreamReader r = new StreamReader(path))
-            {
-                string json = r.ReadToEnd();
-                List<Movies> Movie = JsonConvert.DeserializeObject<List<Movies>>(json);
-                ViewBag.moviesList = Movie;
-            }
+                using (StreamReader r = new StreamReader(path))
+                {
+                    string json = r.ReadToEnd();
+                    List<Movies> Movie = JsonConvert.DeserializeObject<List<Movies>>(json);
+                    ViewBag.moviesList = Movie;
+                }
+
+                path = @"D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\allGaners.json";
+                using (StreamReader r = new StreamReader(path))
+                {
+                    string json = r.ReadToEnd();
+                    List<Ganers> Ganer = JsonConvert.DeserializeObject<List<Ganers>>(json);
+                    TempData["GanersList"] = Ganer;
+                }
+                path = @"D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\allMovies.json";
+                using (StreamReader r = new StreamReader(path))
+                {
+                    string json = r.ReadToEnd();
+                    List<Movies> Movie = JsonConvert.DeserializeObject<List<Movies>>(json);
+                    TempData["MovieList"] = Movie;
+                }
             }
             catch (Exception)
             {
-
+                return View();
             }
             ViewBag.num = num;
             return View();
@@ -149,13 +205,22 @@ namespace WebApplication1.Controllers
                     string json = r.ReadToEnd();
                     List<Ganers> Ganer = JsonConvert.DeserializeObject<List<Ganers>>(json);
                     ViewBag.GanersList = Ganer;
+                    TempData["GanersList"] = Ganer;
                 }
+                path = @"D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\allMovies.json";
+                using (StreamReader r = new StreamReader(path))
+                {
+                    string json = r.ReadToEnd();
+                    List<Movies> Movie = JsonConvert.DeserializeObject<List<Movies>>(json);
+                    TempData["MovieList"] = Movie;
+                }
+
             }
             catch (Exception)
             {
-
+                return View();
             }
-            return View(new Ganers());
+            return View();
 
         }
         public ActionResult MoviesPerGaner(string ganer)
@@ -168,7 +233,7 @@ namespace WebApplication1.Controllers
             {
                 Process process = new Process();
                 process.StartInfo.FileName = @"D:\Example-of-Microservices\WebApplication1\MoviesPerGaner\MoviesPerGaner\bin\Debug\MoviesPerGaner.exe";
-                process.StartInfo.Arguments = DataBacePath + " " + path+" "+ganer;
+                process.StartInfo.Arguments = DataBacePath + " " + path + " " + ganer;
                 process.StartInfo.UseShellExecute = false;
                 process.StartInfo.RedirectStandardOutput = true;
                 process.StartInfo.RedirectStandardError = true;
@@ -189,10 +254,24 @@ namespace WebApplication1.Controllers
                     List<Movies> Movie = JsonConvert.DeserializeObject<List<Movies>>(json);
                     ViewBag.moviesList = Movie;
                 }
+                path = @"D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\allGaners.json";
+                using (StreamReader r = new StreamReader(path))
+                {
+                    string json = r.ReadToEnd();
+                    List<Ganers> Ganer = JsonConvert.DeserializeObject<List<Ganers>>(json);
+                    TempData["GanersList"] = Ganer;
+                }
+                path = @"D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\allMovies.json";
+                using (StreamReader r = new StreamReader(path))
+                {
+                    string json = r.ReadToEnd();
+                    List<Movies> Movie = JsonConvert.DeserializeObject<List<Movies>>(json);
+                    TempData["MovieList"] = Movie;
+                }
             }
             catch (Exception)
             {
-
+                return View();
             }
             return View();
         }
