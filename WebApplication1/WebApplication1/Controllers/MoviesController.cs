@@ -76,13 +76,12 @@ namespace WebApplication1.Controllers
             return View();
         }
 
-        public ActionResult Top10()
+        public ActionResult Top10(string num)
         {
-            string num;
-            if (TempData["num"] == null)
+          
+            if (num == null)
                 num = "10";
-            else
-             num = TempData["num"].ToString();
+
             string path = @"D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\TopMovies.json";
             string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
             try
