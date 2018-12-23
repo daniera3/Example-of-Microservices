@@ -1,9 +1,0 @@
-D:\Example-of-Microservices\WebApplication1\MoviesPerGaner\MoviesPerGaner\bin\Debug\MoviesPerGaner.exe.config
-D:\Example-of-Microservices\WebApplication1\MoviesPerGaner\MoviesPerGaner\bin\Debug\MoviesPerGaner.exe
-D:\Example-of-Microservices\WebApplication1\MoviesPerGaner\MoviesPerGaner\bin\Debug\MoviesPerGaner.pdb
-D:\Example-of-Microservices\WebApplication1\MoviesPerGaner\MoviesPerGaner\bin\Debug\Newtonsoft.Json.dll
-D:\Example-of-Microservices\WebApplication1\MoviesPerGaner\MoviesPerGaner\bin\Debug\StreamJsonRpc.dll
-D:\Example-of-Microservices\WebApplication1\MoviesPerGaner\MoviesPerGaner\obj\Debug\MoviesPerGaner.csproj.CoreCompileInputs.cache
-D:\Example-of-Microservices\WebApplication1\MoviesPerGaner\MoviesPerGaner\obj\Debug\MoviesPerGaner.csproj.CopyComplete
-D:\Example-of-Microservices\WebApplication1\MoviesPerGaner\MoviesPerGaner\obj\Debug\MoviesPerGaner.exe
-D:\Example-of-Microservices\WebApplication1\MoviesPerGaner\MoviesPerGaner\obj\Debug\MoviesPerGaner.pdb

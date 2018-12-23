@@ -40,6 +40,8 @@ public class Retriver {
             	movieClass result=new movieClass(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getInt(5), rs.getString(6), rs.getString(7));
             	allMovies.add(result);
             	
+            	
+            	
             }
             JSONArray json = new JSONArray(allMovies);
             FileWriter total=null;
