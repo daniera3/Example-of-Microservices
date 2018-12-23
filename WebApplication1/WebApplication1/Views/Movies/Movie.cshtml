@@ -1,5 +1,4 @@
 ﻿
-
 @using WebApplication1.Models;
 @using System.Collections.Generic;
 @{
@@ -27,7 +26,7 @@
                                         <td rowspan="2" valign="top" id="img_primary">
                                             <div class="image">
                                                 <a>
-                                                    <div class="hover-over-image zero-z-index">
+                                                    <div href="/Movies/CMovie?id=@m.Idmovie.ToString()" class="hover-over-image zero-z-index">
                                                         <img class="poster shadowed"
                                                              height=@m.Img.height
                                                              width=@m.Img.width
@@ -40,7 +39,7 @@
                                         </td>
                                         <td class="overview-top">
                                             <h4>
-                                                <a title=@m.Title>@m.Title</a>
+                                                <a href="/Movies/CMovie?id=@m.Idmovie.ToString()" title=@m.Title>@m.Title</a>
                                             </h4>
                                             <p class="cert-runtime-genre">
                                                 <img title="PG"
