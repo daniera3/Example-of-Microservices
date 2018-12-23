@@ -1,4 +1,9 @@
 <project>
+<dependency>
+    <groupId>com.microsoft.sqlserver</groupId>
+    <artifactId>mssql-jdbc</artifactId>
+    <version>7.0.0.jre10</version>
+</dependency>
   <modelVersion>4.0.0</modelVersion>
   <groupId>mysql</groupId>
   <artifactId>mysql-connector-java</artifactId>
@@ -30,4 +35,11 @@ in this distribution for more details.</comments>
     <name>Oracle Corporation</name>
     <url>http://www.oracle.com</url>
   </organization>
+  <!-- https://mvnrepository.com/artifact/org.json/json -->
+<dependency>
+    <groupId>org.json</groupId>
+    <artifactId>json</artifactId>
+    <version>20180130</version>
+</dependency>
+  
 </project>
