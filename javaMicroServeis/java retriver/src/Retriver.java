@@ -41,6 +41,8 @@ public class Retriver {
             	allMovies.add(result);
             	System.out.println(result.getIdimg());
             	
+            	
+            	
             }
             JSONArray json = new JSONArray(allMovies);
             FileWriter total=null;
