@@ -39,22 +39,30 @@ public class Retriver {
             //run on the data from the sql server and extract
             while (rs.next()) {
             	movieClass result=new movieClass(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getInt(5), rs.getString(6), rs.getString(7));
-            	String query = "SELECT * FROM [dbo].[movieimg] WHERE [idimg] = "+rs.getInt(1)+';';
+            	String query = "SELECT * FROM [dbo].[movieimg] WHERE [idimg] = "+rs.getInt(1);
             	ResultSet rs1 = stmt.executeQuery(query);
             	while (rs1.next()) {
             	result.setImg(new Imge(rs1.getInt(1), rs1.getString(2), rs1.getString(3),rs1.getString(4), rs1.getString(5), rs1.getString(6)));
             	}
-            	 query = "SELECT * FROM [dbo].[movieimg] WHERE [idimg] = "+rs.getInt(1)+';';
+            	 query = "SELECT * FROM [dbo].[star] WHERE [idmovie] ="+rs.getInt(1);
             	 rs1 = stmt.executeQuery(query);
             	while (rs1.next()) {
+            		result.Str.add(new Star(rs1.getString(1), rs1.getInt(2)));
             	}
+           	 	query = "SELECT * FROM [dbo].[Director] WHERE [idmovie] ="+rs.getInt(1);
+           	 	rs1 = stmt.executeQuery(query);
+           	 	while (rs1.next()) {
+           	 		result.Dir.add(new Director(rs1.getString(1), rs1.getInt(2)));
+           	 	}
+           	 	query = "SELECT * FROM [dbo].[genre] WHERE [idmovie] ="+rs.getInt(1);
+           	 	rs1 = stmt.executeQuery(query);
+           	 	while (rs1.next()) {
+           	 		result.Ganer.add(new Ganers(rs1.getString(1), rs1.getInt(2)));
+           	 	}
             	allMovies.add(result);
-            	System.out.println(result.getIdimg());
-            	}
+            	
+            }  	
             
-            	
-            	
-            }
             JSONArray json = new JSONArray(allMovies);
             FileWriter total=null;
             try {
@@ -73,6 +81,9 @@ public class Retriver {
         }
         // Handle any errors that may have occurred.
         catch (SQLException e) {
+        	e.printStackTrace();
+        }
+        catch(Exception e) {
         	e.printStackTrace();
         }
         log.close();

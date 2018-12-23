@@ -3,6 +3,7 @@
 	<name>java retriver</name>
 	<comment></comment>
 	<projects>
+		<project>sources</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
