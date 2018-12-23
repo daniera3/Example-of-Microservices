@@ -39,6 +39,7 @@ public class Retriver {
             while (rs.next()) {
             	movieClass result=new movieClass(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getInt(5), rs.getString(6), rs.getString(7));
             	allMovies.add(result);
+            	System.out.println(result.getIdimg());
             	
             }
             JSONArray json = new JSONArray(allMovies);

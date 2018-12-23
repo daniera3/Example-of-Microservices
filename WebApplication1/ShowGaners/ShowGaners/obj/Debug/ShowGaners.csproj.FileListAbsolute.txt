@@ -1,9 +1,0 @@
-D:\Example-of-Microservices\WebApplication1\ShowGaners\ShowGaners\bin\Debug\ShowGaners.exe.config
-D:\Example-of-Microservices\WebApplication1\ShowGaners\ShowGaners\bin\Debug\ShowGaners.exe
-D:\Example-of-Microservices\WebApplication1\ShowGaners\ShowGaners\bin\Debug\ShowGaners.pdb
-D:\Example-of-Microservices\WebApplication1\ShowGaners\ShowGaners\bin\Debug\Newtonsoft.Json.dll
-D:\Example-of-Microservices\WebApplication1\ShowGaners\ShowGaners\bin\Debug\StreamJsonRpc.dll
-D:\Example-of-Microservices\WebApplication1\ShowGaners\ShowGaners\obj\Debug\ShowGaners.csproj.CoreCompileInputs.cache
-D:\Example-of-Microservices\WebApplication1\ShowGaners\ShowGaners\obj\Debug\ShowGaners.csproj.CopyComplete
-D:\Example-of-Microservices\WebApplication1\ShowGaners\ShowGaners\obj\Debug\ShowGaners.exe
-D:\Example-of-Microservices\WebApplication1\ShowGaners\ShowGaners\obj\Debug\ShowGaners.pdb
