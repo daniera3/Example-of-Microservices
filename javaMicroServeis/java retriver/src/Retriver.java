@@ -11,9 +11,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import org.json.JSONArray;
 
-
-
-
 public class Retriver {
 
 	@SuppressWarnings("null")
@@ -40,7 +37,7 @@ public class Retriver {
             ResultSet rs = stmt.executeQuery(SQL);
             //run on the data from the sql server and extract
             while (rs.next()) {
-            	movieClass result=new movieClass(rs.getInt(0), rs.getString(1), rs.getInt(2), rs.getString(3), rs.getInt(4), rs.getString(5), rs.getString(6));
+            	movieClass result=new movieClass(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getInt(5), rs.getString(6), rs.getString(7));
             	allMovies.add(result);
             	
             }
@@ -66,5 +63,4 @@ public class Retriver {
         }
         log.close();
 	}
-
 }
