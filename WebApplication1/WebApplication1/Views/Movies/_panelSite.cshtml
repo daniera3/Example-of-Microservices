@@ -2,9 +2,24 @@
 @using System.Collections.Generic;
 @{
     ViewBag.Title = "_panelSite";
-
-    List<Movies> Movie = ((IEnumerable<Movies>)TempData["MovieList"]).Cast<Movies>().ToList();
-    List<Ganers> Ganer = ((IEnumerable<Ganers>)TempData["GanersList"]).Cast<Ganers>().ToList();
+    List<Movies> Movie;
+    List<Ganers> Ganer;
+    if (TempData["MovieList"] != null)
+    {
+        Movie = ((IEnumerable<Movies>)TempData["MovieList"]).Cast<Movies>().ToList();
+    }
+    else
+    {
+        Movie = new List<Movies>();
+    }
+    if (TempData["GanersList"] != null)
+    {
+         Ganer = ((IEnumerable<Ganers>)TempData["GanersList"]).Cast<Ganers>().ToList();
+    }
+    else
+    {
+         Ganer = new List<Ganers>();
+    }
 }
 
 

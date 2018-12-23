@@ -14,20 +14,23 @@ namespace WebApplication1.Controllers
 {
     public class MoviesController : Controller
     {
+        string BaseDirectory = Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory);
+        string BDirectory = Path.GetDirectoryName((Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory)));
         // GET: Movies
         public ActionResult CMovie(string id)
         {
             Movies Cmovie = new Movies() ;
             try
             {
-                string path = @"D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\allGaners.json";
+                
+                string path = BaseDirectory + @"\App_Data\allGaners.json";
                 using (StreamReader r = new StreamReader(path))
                 {
                     string json = r.ReadToEnd();
                     List<Ganers> Ganer = JsonConvert.DeserializeObject<List<Ganers>>(json);
                     TempData["GanersList"] = Ganer;
                 }
-                path = @"D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\allMovies.json";
+                path = BaseDirectory+ @"\App_Data\allMovies.json";
                 using (StreamReader r = new StreamReader(path))
                 {
                     string json = r.ReadToEnd();
@@ -72,13 +75,14 @@ namespace WebApplication1.Controllers
 
 
 
-            string path = @"D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\allMovies.json";
-
-            string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
+            string path = BaseDirectory+@"\App_Data\allMovies.json";
+          
+            string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=" + BaseDirectory + @"\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
+           // string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
             try
             {
                 Process process = new Process();
-                process.StartInfo.FileName = "D:\\Example-of-Microservices\\WebApplication1\\wecandothis\\candoit\\bin\\Debug\\candoit.exe";
+                process.StartInfo.FileName = BDirectory+ @"\wecandothis\candoit\bin\Debug\candoit.exe";
                 process.StartInfo.Arguments = DataBacePath + " " + path;
                 process.StartInfo.UseShellExecute = false;
                 process.StartInfo.RedirectStandardOutput = true;
@@ -102,7 +106,7 @@ namespace WebApplication1.Controllers
                     TempData["MovieList"] = Movie;
                 }
 
-                path = @"D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\allGaners.json";
+                path = BaseDirectory+@"\App_Data\allGaners.json";
                 using (StreamReader r = new StreamReader(path))
                 {
                     string json = r.ReadToEnd();
@@ -123,12 +127,13 @@ namespace WebApplication1.Controllers
             if (num == null)
                 num = "10";
 
-            string path = @"D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\TopMovies.json";
-            string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
+            string path = BaseDirectory+@"\App_Data\TopMovies.json";
+            string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=" + BaseDirectory + @"\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
+            //string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
             try
             {
                 Process process = new Process();
-                process.StartInfo.FileName = "D:\\Example-of-Microservices\\WebApplication1\\TopMovies\\TopMovies\\bin\\Debug\\TopMovies.exe";
+                process.StartInfo.FileName = BDirectory + @"\TopMovies\TopMovies\bin\\Debug\TopMovies.exe";
                 process.StartInfo.Arguments = DataBacePath + " " + path + " " + num;
                 process.StartInfo.UseShellExecute = false;
                 process.StartInfo.RedirectStandardOutput = true;
@@ -151,14 +156,14 @@ namespace WebApplication1.Controllers
                     ViewBag.moviesList = Movie;
                 }
 
-                path = @"D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\allGaners.json";
+                path = BaseDirectory+@"\App_Data\allGaners.json";
                 using (StreamReader r = new StreamReader(path))
                 {
                     string json = r.ReadToEnd();
                     List<Ganers> Ganer = JsonConvert.DeserializeObject<List<Ganers>>(json);
                     TempData["GanersList"] = Ganer;
                 }
-                path = @"D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\allMovies.json";
+                path = BaseDirectory+ @"\App_Data\allMovies.json";
                 using (StreamReader r = new StreamReader(path))
                 {
                     string json = r.ReadToEnd();
@@ -178,13 +183,13 @@ namespace WebApplication1.Controllers
         public ActionResult Genre()
         {
 
-            string path = @"D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\allGaners.json";
+            string path = BaseDirectory+ @"\App_Data\allGaners.json";
 
-            string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
+            string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename="+ BaseDirectory+@"\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
             try
             {
                 Process process = new Process();
-                process.StartInfo.FileName = @"D:\Example-of-Microservices\WebApplication1\ShowGaners\ShowGaners\bin\Debug\ShowGaners.exe";
+                process.StartInfo.FileName = BDirectory +  @"\ShowGaners\ShowGaners\bin\Debug\ShowGaners.exe";
                 process.StartInfo.Arguments = DataBacePath + " " + path;
                 process.StartInfo.UseShellExecute = false;
                 process.StartInfo.RedirectStandardOutput = true;
@@ -207,7 +212,7 @@ namespace WebApplication1.Controllers
                     ViewBag.GanersList = Ganer;
                     TempData["GanersList"] = Ganer;
                 }
-                path = @"D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\allMovies.json";
+                path = BaseDirectory+@"\App_Data\allMovies.json";
                 using (StreamReader r = new StreamReader(path))
                 {
                     string json = r.ReadToEnd();
@@ -226,13 +231,13 @@ namespace WebApplication1.Controllers
         public ActionResult MoviesPerGaner(string ganer)
         {
        
-            string path = @"D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\MGaners.json";
-
-            string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
+            string path = BaseDirectory+ @"\App_Data\MGaners.json";
+            string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=" + BaseDirectory + @"\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
+            //string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
             try
             {
                 Process process = new Process();
-                process.StartInfo.FileName = @"D:\Example-of-Microservices\WebApplication1\MoviesPerGaner\MoviesPerGaner\bin\Debug\MoviesPerGaner.exe";
+                process.StartInfo.FileName = BDirectory + @"\MoviesPerGaner\MoviesPerGaner\bin\Debug\MoviesPerGaner.exe";
                 process.StartInfo.Arguments = DataBacePath + " " + path + " " + ganer;
                 process.StartInfo.UseShellExecute = false;
                 process.StartInfo.RedirectStandardOutput = true;
@@ -248,20 +253,21 @@ namespace WebApplication1.Controllers
 
 
 
+
                 using (StreamReader r = new StreamReader(path))
                 {
                     string json = r.ReadToEnd();
                     List<Movies> Movie = JsonConvert.DeserializeObject<List<Movies>>(json);
                     ViewBag.moviesList = Movie;
                 }
-                path = @"D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\allGaners.json";
+                path = BaseDirectory+@"\App_Data\allGaners.json";
                 using (StreamReader r = new StreamReader(path))
                 {
                     string json = r.ReadToEnd();
                     List<Ganers> Ganer = JsonConvert.DeserializeObject<List<Ganers>>(json);
                     TempData["GanersList"] = Ganer;
                 }
-                path = @"D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\allMovies.json";
+                path = BaseDirectory+ @"\App_Data\allMovies.json";
                 using (StreamReader r = new StreamReader(path))
                 {
                     string json = r.ReadToEnd();
