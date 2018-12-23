@@ -2,8 +2,17 @@
 @using WebApplication1.Models;
 @using System.Collections.Generic;
 @{
+    List<Movies> movie;
     ViewBag.Title = "MoviesPerGaner";
-    List<Movies> movie = ViewBag.moviesList;
+    if (ViewBag.moviesList != null)
+    {
+        movie = ViewBag.moviesList;
+    }
+    else
+    {
+        movie = new List<Movies>();
+    }
+}
 }
 @Html.Partial("_panelSite")
 <h2>Movies Per Ganer: @movie[0].Ganer[0].NameGaner</h2>

@@ -2,8 +2,12 @@
 @using System.Collections.Generic;
 
 @{
+    List<Ganers> Ganer;
     ViewBag.Title = "Genres";
-    List<Ganers> Ganer = ViewBag.GanersList;
+    if (ViewBag.GanersList != null)
+    { Ganer = ViewBag.GanersList; }
+    else
+    { Ganer = new List<Ganers>(); }
 }
 
 @Html.Partial("_panelSite")

@@ -2,8 +2,16 @@
 @using WebApplication1.Models;
 @using System.Collections.Generic;
 @{
+    List<Movies> movie;
     ViewBag.Title = "Movie";
-    List<Movies> movie = ViewBag.moviesList;
+    if (ViewBag.moviesList != null)
+    {
+        movie = ViewBag.moviesList;
+    }
+    else
+    {
+        movie = new List<Movies>();
+    }
 }
 @Html.Partial("_panelSite")
 

@@ -2,8 +2,16 @@
 @using System.Collections.Generic;
 
 @{
+    List<Movies> movie;
     ViewBag.Title = "Top";
-    List<Movies> movie = ViewBag.moviesList;
+    if (ViewBag.moviesList != null)
+    {
+        movie = ViewBag.moviesList;
+    }
+    else
+    {
+        movie = new List<Movies>();
+    }
 }
 @Html.Partial("_panelSite")
 <body id="styleguide-v2" class="fixed">
