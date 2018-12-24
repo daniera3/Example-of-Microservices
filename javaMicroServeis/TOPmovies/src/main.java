@@ -1,22 +1,21 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+
 import org.json.JSONArray;
 
+public class main {
 
-public class Retriver {
-
-	@SuppressWarnings("null")
 	public static void main(String[] args) throws IOException {
-		ArrayList<movieClass> allMovies=new ArrayList<movieClass>();
+ArrayList<movieClass> allMovies=new ArrayList<movieClass>();
 		
 		File config=new File("config");
 		FileWriter log=null;
@@ -33,8 +32,8 @@ public class Retriver {
 		}
 		  // set the connection string in the connection object
         String connectionUrl =sc.nextLine();
-        try (Connection con = DriverManager.getConnection(connectionUrl); Statement stmt = con.createStatement();) {
-            String SQL = "SELECT TOP 4 * FROM [dbo].[Movie] ORDER BY [rating] DESC";
+        try (Connection con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=dbo;integratedSecurity=true;"); Statement stmt = con.createStatement();) {
+            String SQL = "SELECT * FROM [dbo].[Movie]";
             ResultSet rs = stmt.executeQuery(SQL);
             //run on the data from the sql server and extract
             while (rs.next()) {
@@ -44,17 +43,17 @@ public class Retriver {
             	while (rs1.next()) {
             	result.setImg(new Imge(rs1.getInt(1), rs1.getString(2), rs1.getString(3),rs1.getString(4), rs1.getString(5), rs1.getString(6)));
             	}
-            	 query = "SELECT * FROM [dbo].[star] WHERE [idmovie] ="+rs.getInt(1);
+            	 query = "SELECT * FROM [dbo].[star] WHERE [idmovie] ="+result.Idmovie;
             	 rs1 = stmt.executeQuery(query);
             	while (rs1.next()) {
             		result.Str.add(new Star(rs1.getString(1), rs1.getInt(2)));
             	}
-           	 	query = "SELECT * FROM [dbo].[Director] WHERE [idmovie] ="+rs.getInt(1);
+           	 	query = "SELECT * FROM [dbo].[Director] WHERE [idmovie] ="+result.Idmovie;
            	 	rs1 = stmt.executeQuery(query);
            	 	while (rs1.next()) {
            	 		result.Dir.add(new Director(rs1.getString(1), rs1.getInt(2)));
            	 	}
-           	 	query = "SELECT * FROM [dbo].[genre] WHERE [idmovie] ="+rs.getInt(1);
+           	 	query = "SELECT * FROM [dbo].[genre] WHERE [idmovie] ="+result.Idmovie;
            	 	rs1 = stmt.executeQuery(query);
            	 	while (rs1.next()) {
            	 		result.Ganer.add(new Ganers(rs1.getString(1), rs1.getInt(2)));
@@ -66,7 +65,7 @@ public class Retriver {
             JSONArray json = new JSONArray(allMovies);
             FileWriter total=null;
             try {
-            	total=new FileWriter("resultTop.json");
+            	total=new FileWriter("result.json");
 			} catch (IOException e) {
 				//try to create the output file
 				log.write("cannot create outputfile");
@@ -88,4 +87,6 @@ public class Retriver {
         }
         log.close();
 	}
+	
+	
 }

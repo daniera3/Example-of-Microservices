@@ -12,7 +12,7 @@ import java.util.Scanner;
 import org.json.JSONArray;
 
 
-public class Retriver {
+public class top {
 
 	@SuppressWarnings("null")
 	public static void main(String[] args) throws IOException {
@@ -36,7 +36,7 @@ public class Retriver {
         String connectionUrl =sc.nextLine();
         try ( 
         		Connection con = DriverManager.getConnection(connectionUrl); Statement stmt = con.createStatement();) {
-            String SQL = "SELECT * FROM dbo.Movie";
+            String SQL = "SELECT TOP 4 * FROM dbo.Movie ORDER BY [rating] DESC";
             ResultSet rs = stmt.executeQuery(SQL);
             //run on the data from the sql server and extract
             while (rs.next()) {
@@ -50,10 +50,9 @@ public class Retriver {
             }  	
             
             JSONArray json = new JSONArray(allMovies);
-            System.out.println(json)	;
             FileWriter total=null;
             try {
-            	total=new FileWriter("result.json");
+            	total=new FileWriter("resultTop.json");
 			} catch (IOException e) {
 				//try to create the output file
 				log.write("cannot create outputfile");
@@ -99,9 +98,7 @@ public class Retriver {
 	String query = "SELECT * FROM [dbo].[movieimg] WHERE [idimg] = "+result.Idmovie;
 	ResultSet rs1 = stmt.executeQuery(query);
 	while (rs1.next()) {
-			Imge i=new Imge(rs1.getInt(1), rs1.getString(2), rs1.getString(3),rs1.getString(4), rs1.getString(5), rs1.getString(6));
-			//System.out.println(i.title)	;
-			result.Img=i;
+	result.setImg(new Imge(rs1.getInt(1), rs1.getString(2), rs1.getString(3),rs1.getString(4), rs1.getString(5), rs1.getString(6)));
 	}
    }
         }
