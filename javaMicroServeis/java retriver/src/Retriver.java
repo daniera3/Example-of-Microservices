@@ -46,15 +46,11 @@ public class Retriver {
             	getdir( result);
             	getganer( result);
             	allMovies.add(result);
-<<<<<<< HEAD
-            	
-            }  	
-            
-=======
+
             	System.out.println(result.getIdimg());
             	
             }
->>>>>>> parent of 0e6ed1b... Merge branch 'javaSqlRetrive' of https://github.com/daniera3/Example-of-Microservices into javaSqlRetrive
+
             JSONArray json = new JSONArray(allMovies);
             System.out.println(json)	;
             FileWriter total=null;
