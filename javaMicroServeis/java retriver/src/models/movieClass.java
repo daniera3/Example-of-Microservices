@@ -1,15 +1,18 @@
+package models;
+
 import java.util.ArrayList;
 
-
 public class movieClass {
-	
-	public Imge Img ;
-    public String Outline ;
-    public int Idmovie ;
-    public String Title ;
-    public int Idimg ;
-    public String Time ;
-    public int Rating ;
+	private ArrayList<Star> stars=new ArrayList<Star>();
+	private ArrayList<Director> diractors=new ArrayList<Director>();
+	private ArrayList<Ganers> Ganer = new ArrayList<Ganers>();
+	private Imge Img ;
+	private String Outline ;
+	private int Idmovie ;
+	private String Title ;
+	private int Idimg ;
+	private String Time ;
+	private int Rating ;
     public Imge getImg() {
 		return Img;
 	}
@@ -74,34 +77,10 @@ public class movieClass {
 		Certificate = certificate;
 	}
 
-	public ArrayList<Star> getStr() {
-		return Str;
-	}
-
-	public void setStr(ArrayList<Star> str) {
-		Str = str;
-	}
-
-	public ArrayList<Ganers> getGaner() {
-		return Ganer;
-	}
-
-	public void setGaner(ArrayList<Ganers> ganer) {
-		Ganer = ganer;
-	}
-
-	public ArrayList<Director> getDir() {
-		return Dir;
-	}
-
-	public void setDir(ArrayList<Director> dir) {
-		Dir = dir;
-	}
+	
 
 	public String Certificate ;
-    public ArrayList<Star> Str ;
-    public ArrayList<Ganers> Ganer ;
-    public ArrayList<Director> Dir ;
+
 	public movieClass (int idmovie, String t, int idimg, String time, int rating, String Certificate, String outline)
     {
         this.Idmovie = idmovie;
@@ -111,11 +90,32 @@ public class movieClass {
         this.Rating = rating;
         this.Outline = outline;
         this.Certificate = Certificate;
-        this.Str = new ArrayList<Star>();
-        this.Dir = new ArrayList<Director>();
-        this.Ganer = new ArrayList<Ganers>();
+
     }
 
+	public void addStars(Star stars) {
+		this.stars.add(stars);
+	}
+	
+	
+	public void addDiractors(Director dir) {
+		this.diractors.add(dir);
+	}
+
+	public ArrayList<Star> getStars() {
+		return stars;
+	}
+	public ArrayList<Director> getDiracors(){
+		return diractors;
+	}
+
+	public ArrayList<Ganers> getGaner() {
+		return Ganer;
+	}
+
+	public void addGaner(Ganers ganer) {
+		this.Ganer.add(ganer);
+	}
 
 
 

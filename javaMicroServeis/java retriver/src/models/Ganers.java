@@ -1,12 +1,18 @@
+package models;
     public class Ganers
     {
-        public int Idmovie ;
-        public String NameGaner ;
-
+        private int Idmovie ;
+        private String NameGaner ;
         public Ganers(String url, int id)
         {
             Idmovie = id;
             NameGaner = url;
         }
+		public int getIdmovie() {
+			return Idmovie;
+		}
+		public String getNameGaner() {
+			return NameGaner;
+		}
     }
     

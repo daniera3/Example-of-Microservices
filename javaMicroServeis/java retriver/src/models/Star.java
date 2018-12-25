@@ -1,9 +1,16 @@
+package models;
 
     public class Star
     {
-        public int Idmovie ;
-        public String Namestar ;
-        public Star(String url, int id)
+        private int Idmovie ;
+        private String Namestar ;
+        public int getIdmovie() {
+			return Idmovie;
+		}
+		public String getNamestar() {
+			return Namestar;
+		}
+		public Star(String url, int id)
         {
             Idmovie = id;
             Namestar = url;

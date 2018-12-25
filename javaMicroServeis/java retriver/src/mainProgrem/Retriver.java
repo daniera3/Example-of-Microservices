@@ -1,187 +1,136 @@
+package mainProgrem;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import org.json.JSONArray;
+import ex.retriverExeption;
+import models.*;
+
+
 
 
 public class Retriver {
 
-	@SuppressWarnings("null")
-	public static void main(String[] args) throws IOException {
-		ArrayList<movieClass> allMovies=new ArrayList<movieClass>();
-		
-		File config=new File("config");
-		FileWriter log=null;
-		try {
-		try {
-			log=new FileWriter("log.txt");
-		} catch (IOException e2) {
-			log.write("cannot write to the log file");
-		}
-		Scanner sc=null;
+	static private File config=new File("config.txt");
+	static private Scanner sc=null;
+	protected static String connectionUrl=null;
+	static private FileWriter total=null;
+	static String statue="normal";
+	public static boolean succes=false;
+	
+	public Retriver(String s) throws Exception {
+		statue=s;
+	}
+	//normal mode
+	public Retriver() {
+		statue="normal";
+	}
+	
+	public static void main(String[] args) throws  Exception {
+	
+		//try to read from file
 		try {
 			sc = new Scanner(config);
-		} catch (FileNotFoundException e1) {
-			log.write("cannot open config  file");
+		} catch (Exception e) {
+			throw new retriverExeption("cannot read from config file",2);
 		}
-		  // set the connection string in the connection object
-        String connectionUrl =sc.nextLine();
-        try ( 
-        		Connection con = DriverManager.getConnection(connectionUrl); Statement stmt = con.createStatement();) {
+		
+		//create new array to store the data from the data base
+		ArrayList<movieClass> allMovies=new ArrayList<movieClass>();
+		
+		//see if got connection string
+		if(args.length>0) {
+			connectionUrl=args[0];
+		System.out.println(args[0]);
+		}
+		else if(sc.hasNext()) 
+				connectionUrl =sc.nextLine();
+		else 
+			throw new retriverExeption("dont have connction string",4);
+		
+        try {
+        	Connection con = DriverManager.getConnection(connectionUrl);
+        	Statement stmt = con.createStatement(); 
+
             String SQL = "SELECT * FROM dbo.Movie";
+            
+            //exucute the sql query
             ResultSet rs = stmt.executeQuery(SQL);
             //run on the data from the sql server and extract
             while (rs.next()) {
-            	movieClass result=new movieClass(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getInt(5), rs.getString(6), rs.getString(7));
-            	getimg(result);
-            	getstar( result);
-            	getdir( result);
-            	getganer( result);
-            	allMovies.add(result);
-
-            	System.out.println(result.getIdimg());
-            	
+            movieClass result=new movieClass(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getInt(5), rs.getString(6), rs.getString(7));
+            new GetImg(result);
+         	new GetStar( result);
+           	new GetDir( result);
+          	new GetGenar( result);
+          	allMovies.add(result);      
             }
-
+            //convert the javaArray to json Array
             JSONArray json = new JSONArray(allMovies);
-            System.out.println(json)	;
-            FileWriter total=null;
+            
             try {
             	total=new FileWriter("result.json");
 			} catch (IOException e) {
-				//try to create the output file
-				log.write("cannot create outputfile");
+				throw new retriverExeption("cannot create outputfile ",5);
 			}
+
             try {
             	total.write(json.toString());
             	total.close();
 			} catch (IOException e) {
-				log.write("eror : cannot convert json to string");
+				throw new retriverExeption("eror : cannot convert json to string ",6);
 			}
             
         }
-        // Handle any errors that may have occurred.
+        // Handle connection exceptions
         catch (SQLException e) {
-        	e.printStackTrace();
+        	throw new retriverExeption("cannot connect to server ",6);
         }
-	}
-        catch(Exception e) {
-        	e.printStackTrace();
+        if (statue=="normal")
+        	System.exit(0);
+        else {
+        succes=true;
+        statue="normal";
         }
-        log.close();
+
+      
 	}
 	
 	
-	@SuppressWarnings("null")
-	static void getimg(movieClass result) throws IOException, SQLException {
-		File config=new File("config");
-		FileWriter log=null;
-		try {
-			log=new FileWriter("log.txt");
-		} catch (IOException e2) {
-			log.write("cannot write to the log file");
-		}
-		Scanner sc=null;
-		try {
-			sc = new Scanner(config);
-		} catch (FileNotFoundException e1) {
-			log.write("cannot open config  file");
-		}
-		  // set the connection string in the connection object
-        String connectionUrl =sc.nextLine();
-        try ( Connection con = DriverManager.getConnection(connectionUrl); Statement stmt = con.createStatement();) {
-	String query = "SELECT * FROM [dbo].[movieimg] WHERE [idimg] = "+result.Idmovie;
-	ResultSet rs1 = stmt.executeQuery(query);
-	while (rs1.next()) {
-			Imge i=new Imge(rs1.getInt(1), rs1.getString(2), rs1.getString(3),rs1.getString(4), rs1.getString(5), rs1.getString(6));
-			//System.out.println(i.title)	;
-			result.Img=i;
-	}
-   }
-        }
-	
-	static void getstar(movieClass result) throws SQLException, IOException {
-		File config=new File("config");
-		FileWriter log=null;
-		try {
-			log=new FileWriter("log.txt");
-		} catch (IOException e2) {
-			log.write("cannot write to the log file");
-		}
-		Scanner sc=null;
-		try {
-			sc = new Scanner(config);
-		} catch (FileNotFoundException e1) {
-			log.write("cannot open config  file");
-		}
-		  // set the connection string in the connection object
-        String connectionUrl =sc.nextLine();
-        try ( Connection con = DriverManager.getConnection(connectionUrl); Statement stmt = con.createStatement();) {
-	 String query = "SELECT * FROM [dbo].[star] WHERE [idmovie] ="+result.Idmovie;
-	 ResultSet rs1 = stmt.executeQuery(query);
-	while (rs1.next()) {
-		result.Str.add(new Star(rs1.getString(1), rs1.getInt(2)));
-	}
-        }
-	}
-	static void getdir(movieClass result) throws SQLException, IOException {
-		File config=new File("config");
-		FileWriter log=null;
-		try {
-			log=new FileWriter("log.txt");
-		} catch (IOException e2) {
-			log.write("cannot write to the log file");
-		}
-		Scanner sc=null;
-		try {
-			sc = new Scanner(config);
-		} catch (FileNotFoundException e1) {
-			log.write("cannot open config  file");
-		}
-		  // set the connection string in the connection object
-        String connectionUrl =sc.nextLine();
-        try ( Connection con = DriverManager.getConnection(connectionUrl); Statement stmt = con.createStatement();) {
-	
-	 	String query = "SELECT * FROM [dbo].[Director] WHERE [idmovie] ="+result.Idmovie;
-	 	ResultSet rs1 = stmt.executeQuery(query);
-	 	while (rs1.next()) {
-	 		result.Dir.add(new Director(rs1.getString(1), rs1.getInt(2)));
-	 	}
-	}
+//	private static void TestingMode() throws  Exception {
+//		ArrayList<movieClass> allMovies=new ArrayList<movieClass>();
+//        	Connection con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=TestDB;integratedSecurity=true;");
+//        	Statement stmt = con.createStatement(); 
+//            String SQL = "SELECT * FROM dbo.Movie";
+//            
+//            //exucute the sql query
+//           // ResultSet rs = stmt.executeQuery(SQL);
+//            
+//            //run on the data from the sql server and extract
+////            while (rs.next()) {
+////            movieClass result=new movieClass(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getInt(5), rs.getString(6), rs.getString(7));
+////            new GetImg(result);
+////         	new GetStar( result);
+////           	new GetDir( result);
+////          	new GetGenar( result);
+////          	allMovies.add(result);      
+////            }
+//            //convert the javaArray to json Array
+////            JSONArray json = new JSONArray(allMovies);
+//
+////            total=new FileWriter("result.json");
+////            total.write(json.toString());
+////            total.close();
+//            succes=true;
+//            
+//
+//	}
 }
-	
-	static void getganer(movieClass result) throws SQLException, IOException {
-		File config=new File("config");
-		FileWriter log=null;
-		try {
-			log=new FileWriter("log.txt");
-		} catch (IOException e2) {
-			log.write("cannot write to the log file");
-		}
-		Scanner sc=null;
-		try {
-			sc = new Scanner(config);
-		} catch (FileNotFoundException e1) {
-			log.write("cannot open config  file");
-		}
-		  // set the connection string in the connection object
-        String connectionUrl =sc.nextLine();
-        try ( Connection con = DriverManager.getConnection(connectionUrl); Statement stmt = con.createStatement();) {
-	
-        String query = "SELECT * FROM [dbo].[genre] WHERE [idmovie] ="+result.Idmovie;
-	 	ResultSet rs1 = stmt.executeQuery(query);
-	 	while (rs1.next()) {
-	 		result.Ganer.add(new Ganers(rs1.getString(1), rs1.getInt(2)));
-	 	}
-        }
-	}
-	
-}
+
