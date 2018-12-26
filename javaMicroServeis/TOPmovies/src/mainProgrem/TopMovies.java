@@ -16,7 +16,7 @@ import models.*;
 
 
 
-public class Retriver {
+public class TopMovies {
 
 	static private File config=new File("config.txt");
 	static private Scanner sc=null;
@@ -25,11 +25,11 @@ public class Retriver {
 	static String statue="normal";
 	public static boolean succes=false;
 	
-	public Retriver(String s) throws Exception {
+	public TopMovies(String s) throws Exception {
 		statue=s;
 	}
 	//normal mode
-	public Retriver() {
+	public TopMovies() {
 		statue="normal";
 	}
 	
@@ -59,7 +59,7 @@ public class Retriver {
         	Connection con = DriverManager.getConnection(connectionUrl);
         	Statement stmt = con.createStatement(); 
 
-            String SQL = "SELECT * FROM dbo.Movie";
+            String SQL = "SELECT TOP 4 * FROM dbo.Movie ORDER BY [rating] DESC";
             
             //exucute the sql query
             ResultSet rs = stmt.executeQuery(SQL);

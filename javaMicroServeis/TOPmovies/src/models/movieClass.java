@@ -3,8 +3,8 @@ package models;
 import java.util.ArrayList;
 
 public class movieClass {
-	private ArrayList<Star> stars=new ArrayList<Star>();
-	private ArrayList<Director> diractors=new ArrayList<Director>();
+	private ArrayList<Star> Str=new ArrayList<Star>();
+	private ArrayList<Director> Dir=new ArrayList<Director>();
 	private ArrayList<Ganers> Ganer = new ArrayList<Ganers>();
 	private Imge Img ;
 	private String Outline ;
@@ -93,20 +93,20 @@ public class movieClass {
 
     }
 
-	public void addStars(Star stars) {
-		this.stars.add(stars);
+	public void addStars(Star Str) {
+		this.Str.add(Str);
 	}
 	
 	
 	public void addDiractors(Director dir) {
-		this.diractors.add(dir);
+		this.Dir.add(dir);
 	}
 
 	public ArrayList<Star> getStr() {
-		return stars;
+		return Str;
 	}
 	public ArrayList<Director> getDir(){
-		return diractors;
+		return Dir;
 	}
 
 	public ArrayList<Ganers> getGaner() {
