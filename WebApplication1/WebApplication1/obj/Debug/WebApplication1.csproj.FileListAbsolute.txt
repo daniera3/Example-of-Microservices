@@ -512,3 +512,17 @@ C:\Users\97254\Documents\microserviceProject\Example-of-Microservices\Example-of
 C:\Users\97254\Documents\microserviceProject\Example-of-Microservices\Example-of-Microservices\WebApplication1\WebApplication1\bin\Microsoft.Dynamic.xml
 C:\Users\97254\Documents\microserviceProject\Example-of-Microservices\Example-of-Microservices\WebApplication1\WebApplication1\bin\Microsoft.Scripting.xml
 C:\Users\97254\Documents\microserviceProject\Example-of-Microservices\Example-of-Microservices\WebApplication1\WebApplication1\bin\Microsoft.Scripting.Metadata.xml
+D:\Example-of-Microservices\WebApplication1\WebApplication1\bin\IronPython.dll
+D:\Example-of-Microservices\WebApplication1\WebApplication1\bin\IronPython.Modules.dll
+D:\Example-of-Microservices\WebApplication1\WebApplication1\bin\IronPython.SQLite.dll
+D:\Example-of-Microservices\WebApplication1\WebApplication1\bin\IronPython.Wpf.dll
+D:\Example-of-Microservices\WebApplication1\WebApplication1\bin\Microsoft.Dynamic.dll
+D:\Example-of-Microservices\WebApplication1\WebApplication1\bin\Microsoft.Scripting.dll
+D:\Example-of-Microservices\WebApplication1\WebApplication1\bin\Microsoft.Scripting.Metadata.dll
+D:\Example-of-Microservices\WebApplication1\WebApplication1\bin\IronPython.xml
+D:\Example-of-Microservices\WebApplication1\WebApplication1\bin\IronPython.Modules.xml
+D:\Example-of-Microservices\WebApplication1\WebApplication1\bin\IronPython.SQLite.xml
+D:\Example-of-Microservices\WebApplication1\WebApplication1\bin\IronPython.Wpf.xml
+D:\Example-of-Microservices\WebApplication1\WebApplication1\bin\Microsoft.Dynamic.xml
+D:\Example-of-Microservices\WebApplication1\WebApplication1\bin\Microsoft.Scripting.xml
+D:\Example-of-Microservices\WebApplication1\WebApplication1\bin\Microsoft.Scripting.Metadata.xml

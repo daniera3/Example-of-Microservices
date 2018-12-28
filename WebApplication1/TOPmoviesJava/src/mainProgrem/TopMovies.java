@@ -18,6 +18,7 @@ import models.*;
 
 public class TopMovies {
 
+	
 	static private File config=new File("config.txt");
 	static private Scanner sc=null;
 	protected static String connectionUrl=null;
@@ -34,7 +35,7 @@ public class TopMovies {
 	}
 	
 	public static void main(String[] args) throws  Exception {
-	
+		
 		//try to read from file
 		try {
 			sc = new Scanner(config);
@@ -74,7 +75,7 @@ public class TopMovies {
             }
             //convert the javaArray to json Array
             JSONArray json = new JSONArray(allMovies);
-            
+            System.out.println("json");
             try {
             	total=new FileWriter("result.json");
 			} catch (IOException e) {

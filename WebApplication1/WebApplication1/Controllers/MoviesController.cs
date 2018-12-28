@@ -10,6 +10,7 @@ using System.Web;
 using System.Web.Mvc;
 using WebApplication1.Models;
 using IronPython;
+using Microsoft.Scripting.Hosting;
 
 namespace WebApplication1.Controllers
 {
@@ -20,10 +21,10 @@ namespace WebApplication1.Controllers
         // GET: Movies
         public ActionResult CMovie(string id)
         {
-            Movies Cmovie = new Movies() ;
+            Movies Cmovie = new Movies();
             try
             {
-                
+
                 string path = BaseDirectory + @"\App_Data\allGaners.json";
                 using (StreamReader r = new StreamReader(path))
                 {
@@ -31,7 +32,7 @@ namespace WebApplication1.Controllers
                     List<Ganers> Ganer = JsonConvert.DeserializeObject<List<Ganers>>(json);
                     TempData["GanersList"] = Ganer;
                 }
-                path = BaseDirectory+ @"\App_Data\allMovies.json";
+                path = BaseDirectory + @"\App_Data\allMovies.json";
                 using (StreamReader r = new StreamReader(path))
                 {
                     string json = r.ReadToEnd();
@@ -45,7 +46,7 @@ namespace WebApplication1.Controllers
                     }
                 }
             }
-           
+
             catch (Exception) { return View(Cmovie); }
             return View(Cmovie);
 
@@ -79,55 +80,39 @@ namespace WebApplication1.Controllers
             string path = BaseDirectory + @"\App_Data\allMovies.json";
 
             string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=" + BaseDirectory + @"\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
-            // string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
-            if (proj == "java")
-            {
-                try
+            try
+            {// string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
+                if (proj == "java")
                 {
-
-                    var ipy = IronPython.Hosting.Python.CreateRuntime();
-                    List<String> argv = new List<String>();
-                    argv.Add("retriverJava");
-                  
-                    dynamic test = ipy.UseFile(@"C:\Users\97254\Documents\microserviceProject\Example-of-Microservices\Example-of-Microservices\WebApplication1\RUN.py");
-                    test.Simple();
-
-
-
-
-
-
-
-
-
-                    using (StreamReader r = new StreamReader(BDirectory + @"\java retriver\result.json"))
+                    try
                     {
-                        string json = r.ReadToEnd();
-                        List<Movies> Movie = JsonConvert.DeserializeObject<List<Movies>>(json);
-                        ViewBag.moviesList = Movie;
-                        TempData["MovieList"] = Movie;
+                        var ipy = IronPython.Hosting.Python.CreateRuntime();
+                        List<String> argv = new List<String>();
+                        argv.Add("retriverJava");
+
+                        dynamic test = ipy.UseFile(BDirectory + @"\RUN.py");
+                        test.Simple();
                     }
-
-                    path = BaseDirectory + @"\App_Data\allGaners.json";
-                    using (StreamReader r = new StreamReader(path))
+                    catch(Exception)
                     {
-                        string json = r.ReadToEnd();
-                        List<Ganers> Ganer = JsonConvert.DeserializeObject<List<Ganers>>(json);
-                        TempData["GanersList"] = Ganer;
+                        Process process = new Process();
+                        process.StartInfo.FileName = "java";
+                        process.StartInfo.Arguments = "-jar "+BDirectory + @"\retriver.jar";
+                        process.StartInfo.UseShellExecute = false;
+                        process.StartInfo.RedirectStandardOutput = true;
+                        process.StartInfo.RedirectStandardError = true;
+                        process.Start();
+                        //Read the output (or the error)
+                        string output = process.StandardOutput.ReadToEnd();
+                        Console.WriteLine(output);
+                        string err = process.StandardError.ReadToEnd();
+                        Console.WriteLine(err);
+                        process.WaitForExit();
                     }
                 }
-                catch (Exception ex)
+                else
+                {
 
-                {
-                    string a=ex.Message;
-                    return View();
-                }
-                return View();
-            }
-            else
-            {
-                try
-                {
                     Process process = new Process();
                     process.StartInfo.FileName = BDirectory + @"\wecandothis\candoit\bin\Debug\candoit.exe";
                     process.StartInfo.Arguments = DataBacePath + " " + path;
@@ -161,14 +146,17 @@ namespace WebApplication1.Controllers
                         TempData["GanersList"] = Ganer;
                     }
                 }
-                catch (Exception)
-                {
 
-                    return View();
-                }
+            }
+            catch (Exception ex)
+            {
+                string a = ex.Message;
                 return View();
             }
+            return View();
+
         }
+
 
         public ActionResult Top10(string num)
         {
