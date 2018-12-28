@@ -20,7 +20,7 @@ public class retriverExeption extends Exception  {
 		try {
 			log=new FileWriter("log.txt");
 		} catch (IOException e) {
-			System.exit(1);
+			System.exit(32);
 		}
 		Date date = new Date();
 		

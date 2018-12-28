@@ -97,17 +97,19 @@ namespace WebApplication1.Controllers
                     {
                         Process process = new Process();
                         process.StartInfo.FileName = "java";
-                        process.StartInfo.Arguments = "-jar "+BDirectory + @"\retriver.jar";
+                        process.StartInfo.Arguments = "-jar "+BDirectory + @"\retriver.jar"+ " jdbc:sqlserver://localhost:1433;databaseName=dbo;integratedSecurity=true;";
                         process.StartInfo.UseShellExecute = false;
                         process.StartInfo.RedirectStandardOutput = true;
                         process.StartInfo.RedirectStandardError = true;
                         process.Start();
                         //Read the output (or the error)
+
                         string output = process.StandardOutput.ReadToEnd();
                         Console.WriteLine(output);
                         string err = process.StandardError.ReadToEnd();
                         Console.WriteLine(err);
-                        process.WaitForExit();
+                        int a = process.ExitCode;
+                        process.WaitForExit(2000);
                     }
                 }
                 else
