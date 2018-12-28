@@ -22,10 +22,10 @@ public class Retriver {
 	static private Scanner sc=null;
 	protected static String connectionUrl=null;
 	static private FileWriter total=null;
-	static String statue="normal";
+	public static String statue="normal";
 	public static boolean succes=false;
 	
-	public Retriver(String s) throws Exception {
+	public Retriver(String s)  {
 		statue=s;
 	}
 	//normal mode
@@ -42,6 +42,10 @@ public class Retriver {
 		//see if got connection string
 		if(args.length>0) {
 			connectionUrl=args[0];
+			if(statue!="test") {
+				
+			}
+				
 		}
 		else {
 			try {

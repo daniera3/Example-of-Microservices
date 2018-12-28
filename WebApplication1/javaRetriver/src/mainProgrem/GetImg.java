@@ -13,7 +13,7 @@ public class GetImg extends Retriver {
 	public boolean succes=false;
 	public GetImg (movieClass result) throws SQLException {
 		try ( Connection con = DriverManager.getConnection(connectionUrl); Statement stmt = con.createStatement();) {
-			String query = "SELECT * FROM [dbo].[movieimg] WHERE [idimg] = "+result.getIdmovie();
+			String query = "SELECT * FROM [dbo].[movieimg] WHERE [idimg] = "+result.getIdimg();
 			ResultSet rs1 = stmt.executeQuery(query);
 			if (rs1.next()) {
 					result.setImg(new Imge(rs1.getInt(1), rs1.getString(2), rs1.getString(3),rs1.getString(4), rs1.getString(5), rs1.getString(6)));
