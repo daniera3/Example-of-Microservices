@@ -84,28 +84,28 @@ namespace WebApplication1.Controllers
             {// string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
                 if (proj == "java")
                 {
-  
-                     
-                        Process process = new Process();
-                        process.StartInfo.FileName = "java";
-                        process.StartInfo.Arguments = "-jar "+BDirectory + @"\retriver.jar"+ " jdbc:sqlserver://localhost:1433;databaseName=dbo;integratedSecurity=true;";
-                        process.StartInfo.UseShellExecute = false;
-                        process.StartInfo.RedirectStandardOutput = true;
-                        process.StartInfo.RedirectStandardError = true;
-                        process.Start();
-                        //Read the output (or the error)
 
-                        string output = process.StandardOutput.ReadToEnd();
-                        Console.WriteLine(output);
-                        string err = process.StandardError.ReadToEnd();
-                        Console.WriteLine(err);
-                        int a = process.ExitCode;
-                        process.WaitForExit();
 
-                        List<Movies> Movie = JsonConvert.DeserializeObject<List<Movies>>(output);
-                        ViewBag.moviesList = Movie;
-                        TempData["MovieList"] = Movie;
-                    
+                    Process process = new Process();
+                    process.StartInfo.FileName = "java";
+                    process.StartInfo.Arguments = "-jar " + BDirectory + @"\retriver.jar" + " jdbc:sqlserver://localhost:1433;databaseName=dbo;integratedSecurity=true;";
+                    process.StartInfo.UseShellExecute = false;
+                    process.StartInfo.RedirectStandardOutput = true;
+                    process.StartInfo.RedirectStandardError = true;
+                    process.Start();
+                    //Read the output (or the error)
+
+                    string output = process.StandardOutput.ReadToEnd();
+                    Console.WriteLine(output);
+                    string err = process.StandardError.ReadToEnd();
+                    Console.WriteLine(err);
+                    int a = process.ExitCode;
+                    process.WaitForExit();
+
+                    List<Movies> Movie = JsonConvert.DeserializeObject<List<Movies>>(output);
+                    ViewBag.moviesList = Movie;
+                    TempData["MovieList"] = Movie;
+
                 }
                 else
                 {
@@ -134,7 +134,7 @@ namespace WebApplication1.Controllers
                         ViewBag.moviesList = Movie;
                         TempData["MovieList"] = Movie;
                     }
-
+                }
                     path = BaseDirectory + @"\App_Data\allGaners.json";
                     using (StreamReader r = new StreamReader(path))
                     {
@@ -142,7 +142,7 @@ namespace WebApplication1.Controllers
                         List<Ganers> Ganer = JsonConvert.DeserializeObject<List<Ganers>>(json);
                         TempData["GanersList"] = Ganer;
                     }
-                }
+                
 
             }
             catch (Exception ex)
@@ -155,7 +155,7 @@ namespace WebApplication1.Controllers
         }
 
 
-        public ActionResult Top10(string num)
+        public ActionResult Top10(string num, string prog)
         {
           
             if (num == null)
@@ -166,30 +166,54 @@ namespace WebApplication1.Controllers
             //string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
             try
             {
-                Process process = new Process();
-                process.StartInfo.FileName = BDirectory + @"\TopMovies\TopMovies\bin\\Debug\TopMovies.exe";
-                process.StartInfo.Arguments = DataBacePath + " " + path + " " + num;
-                process.StartInfo.UseShellExecute = false;
-                process.StartInfo.RedirectStandardOutput = true;
-                process.StartInfo.RedirectStandardError = true;
-                process.Start();
-                //Read the output (or the error)
-                string output = process.StandardOutput.ReadToEnd();
-                Console.WriteLine(output);
-                string err = process.StandardError.ReadToEnd();
-                Console.WriteLine(err);
-                process.WaitForExit();
-
-
-
-
-                using (StreamReader r = new StreamReader(path))
+                if (prog == "java")
                 {
-                    string json = r.ReadToEnd();
-                    List<Movies> Movie = JsonConvert.DeserializeObject<List<Movies>>(json);
+
+
+                    Process process = new Process();
+                    process.StartInfo.FileName = "java";
+                    process.StartInfo.Arguments = "-jar " + BDirectory + @"\top.jar" + " jdbc:sqlserver://localhost:1433;databaseName=dbo;integratedSecurity=true;";
+                    process.StartInfo.UseShellExecute = false;
+                    process.StartInfo.RedirectStandardOutput = true;
+                    process.StartInfo.RedirectStandardError = true;
+                    process.Start();
+                    //Read the output (or the error)
+
+                    string output = process.StandardOutput.ReadToEnd();
+                    Console.WriteLine(output);
+                    string err = process.StandardError.ReadToEnd();
+                    Console.WriteLine(err);
+                    int a = process.ExitCode;
+                    process.WaitForExit();
+                    List<Movies> Movie = JsonConvert.DeserializeObject<List<Movies>>(output);
                     ViewBag.moviesList = Movie;
                 }
+                else
+                {
+                    Process process = new Process();
+                    process.StartInfo.FileName = BDirectory + @"\TopMovies\TopMovies\bin\\Debug\TopMovies.exe";
+                    process.StartInfo.Arguments = DataBacePath + " " + path + " " + num;
+                    process.StartInfo.UseShellExecute = false;
+                    process.StartInfo.RedirectStandardOutput = true;
+                    process.StartInfo.RedirectStandardError = true;
+                    process.Start();
+                    //Read the output (or the error)
+                    string output = process.StandardOutput.ReadToEnd();
+                    Console.WriteLine(output);
+                    string err = process.StandardError.ReadToEnd();
+                    Console.WriteLine(err);
+                    process.WaitForExit();
 
+
+
+
+                    using (StreamReader r = new StreamReader(path))
+                    {
+                        string json = r.ReadToEnd();
+                        List<Movies> Movie = JsonConvert.DeserializeObject<List<Movies>>(json);
+                        ViewBag.moviesList = Movie;
+                    }
+                }
                 path = BaseDirectory+@"\App_Data\allGaners.json";
                 using (StreamReader r = new StreamReader(path))
                 {
