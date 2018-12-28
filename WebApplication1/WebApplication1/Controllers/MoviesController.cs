@@ -109,7 +109,11 @@ namespace WebApplication1.Controllers
                         string err = process.StandardError.ReadToEnd();
                         Console.WriteLine(err);
                         int a = process.ExitCode;
-                        process.WaitForExit(2000);
+                        process.WaitForExit();
+
+                        List<Movies> Movie = JsonConvert.DeserializeObject<List<Movies>>(output);
+                        ViewBag.moviesList = Movie;
+                        TempData["MovieList"] = Movie;
                     }
                 }
                 else
