@@ -288,7 +288,7 @@ namespace WebApplication1.Controllers
         }
         public ActionResult MoviesPerGaner(string ganer)
         {
-       
+            ViewBag.ganer = ganer;
             string path = BaseDirectory+ @"\App_Data\MGaners.json";
             string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=" + BaseDirectory + @"\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
             //string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
