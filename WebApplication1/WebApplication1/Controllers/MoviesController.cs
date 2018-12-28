@@ -84,17 +84,8 @@ namespace WebApplication1.Controllers
             {// string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
                 if (proj == "java")
                 {
-                    try
-                    {
-                        var ipy = IronPython.Hosting.Python.CreateRuntime();
-                        List<String> argv = new List<String>();
-                        argv.Add("retriverJava");
-
-                        dynamic test = ipy.UseFile(BDirectory + @"\RUN.py");
-                        test.Simple();
-                    }
-                    catch(Exception)
-                    {
+  
+                     
                         Process process = new Process();
                         process.StartInfo.FileName = "java";
                         process.StartInfo.Arguments = "-jar "+BDirectory + @"\retriver.jar"+ " jdbc:sqlserver://localhost:1433;databaseName=dbo;integratedSecurity=true;";
@@ -114,7 +105,7 @@ namespace WebApplication1.Controllers
                         List<Movies> Movie = JsonConvert.DeserializeObject<List<Movies>>(output);
                         ViewBag.moviesList = Movie;
                         TempData["MovieList"] = Movie;
-                    }
+                    
                 }
                 else
                 {

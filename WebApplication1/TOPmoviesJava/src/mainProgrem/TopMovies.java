@@ -35,26 +35,23 @@ public class TopMovies {
 	}
 	
 	public static void main(String[] args) throws  Exception {
-		
-		//try to read from file
-		try {
-			sc = new Scanner(config);
-		} catch (Exception e) {
-			throw new retriverExeption("cannot read from config file",2);
-		}
-		
-		//create new array to store the data from the data base
 		ArrayList<movieClass> allMovies=new ArrayList<movieClass>();
 		
-		//see if got connection string
 		if(args.length>0) {
 			connectionUrl=args[0];
-		System.out.println(args[0]);
 		}
-		else if(sc.hasNext()) 
+		else {
+			try {
+				sc = new Scanner(config);
+			} catch (Exception e) {
+				throw new retriverExeption("cannot read from config file",2);
+			}
+			if(sc.hasNext()) 
 				connectionUrl =sc.nextLine();
-		else 
-			throw new retriverExeption("dont have connction string",4);
+			else 
+				throw new retriverExeption("dont have connction string",4);
+			
+			}
 		
         try {
         	Connection con = DriverManager.getConnection(connectionUrl);
@@ -75,7 +72,8 @@ public class TopMovies {
             }
             //convert the javaArray to json Array
             JSONArray json = new JSONArray(allMovies);
-            System.out.println("json");
+        	System.out.print(json.toString());
+
             try {
             	total=new FileWriter("result.json");
 			} catch (IOException e) {

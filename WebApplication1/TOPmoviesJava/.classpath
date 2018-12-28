@@ -2,7 +2,7 @@
 <classpath>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry exported="true" kind="lib" path="D:/Example-of-Microservices/WebApplication1/javaRetriver/jar addon/java-json.jar"/>
-	<classpathentry exported="true" kind="lib" path="D:/Example-of-Microservices/WebApplication1/javaRetriver/jar addon/sqljdbc_7.0/enu/mssql-jdbc-7.0.0.jre8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/97254/Documents/microserviceProject/Example-of-Microservices/Example-of-Microservices/WebApplication1/javaRetriver/jar addon/sqljdbc_7.0/enu/mssql-jdbc-7.0.0.jre8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/97254/Documents/microserviceProject/Example-of-Microservices/Example-of-Microservices/WebApplication1/javaRetriver/jar addon/java-json.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
