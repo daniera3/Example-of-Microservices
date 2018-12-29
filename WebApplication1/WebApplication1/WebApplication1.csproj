@@ -298,6 +298,7 @@
     <Content Include="Views\Movies\_panelSite.cshtml" />
     <Content Include="Views\Movies\MoviesPerGaner.cshtml" />
     <Content Include="Views\Movies\CMovie.cshtml" />
+    <Content Include="Views\Movies\ShowAllMovies.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

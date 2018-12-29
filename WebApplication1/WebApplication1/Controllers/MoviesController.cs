@@ -19,6 +19,8 @@ namespace WebApplication1.Controllers
         string BaseDirectory = Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory);
         string BDirectory = Path.GetDirectoryName((Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory)));
         // GET: Movies
+
+        
         public ActionResult CMovie(string id)
         {
             Movies Cmovie = new Movies();
@@ -52,6 +54,7 @@ namespace WebApplication1.Controllers
 
         }
 
+       
         public ActionResult Movie(string proj)
         {
             /* ViewBag.a = "https://m.media-amazon.com/images/G/01/imdb/images/certificates/us/r-2493392566._CB484113634_.png";
@@ -155,6 +158,7 @@ namespace WebApplication1.Controllers
         }
 
 
+        
         public ActionResult Top10(string num, string prog)
         {
           
@@ -286,6 +290,8 @@ namespace WebApplication1.Controllers
             return View();
 
         }
+ 
+      
         public ActionResult MoviesPerGaner(string ganer)
         {
             ViewBag.ganer = ganer;
