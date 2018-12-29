@@ -16,10 +16,95 @@ namespace WebApplication1.Controllers
 {
     public class MoviesController : Controller
     {
+
         string BaseDirectory = Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory);
         string BDirectory = Path.GetDirectoryName((Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory)));
-        // GET: Movies
 
+        // GET: Movies
+        private void getMoviesAndGaners()
+        {
+            List<Movies> Movie=new List<Movies>();
+            List<Ganers> Ganer= new List<Ganers>();
+            string path;
+            string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=" + BaseDirectory + @"\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
+            path = BaseDirectory + @"\App_Data\allMovies.json"; 
+            try
+            {
+                try
+                {
+                    using (StreamReader r = new StreamReader(path))
+                    {
+                        string json = r.ReadToEnd();
+                        Movie = JsonConvert.DeserializeObject<List<Movies>>(json);
+                    
+                        TempData["MovieList"] = Movie;
+                    }
+                }
+                
+                catch (Exception)
+                {
+                    Process process = new Process();
+                    process.StartInfo.FileName = BDirectory + @"\wecandothis\candoit\bin\Debug\candoit.exe";
+                    process.StartInfo.Arguments = DataBacePath + " " + path;
+                    process.StartInfo.UseShellExecute = false;
+                    process.StartInfo.RedirectStandardOutput = true;
+                    process.StartInfo.RedirectStandardError = true;
+                    process.Start();
+                    //Read the output (or the error)
+                    string output = process.StandardOutput.ReadToEnd();
+                    Console.WriteLine(output);
+                    string err = process.StandardError.ReadToEnd();
+                    Console.WriteLine(err);
+                    process.WaitForExit();
+
+
+
+
+                    using (StreamReader r = new StreamReader(path))
+                    {
+                        string json = r.ReadToEnd();
+                        Movie = JsonConvert.DeserializeObject<List<Movies>>(json);
+                  
+                        TempData["MovieList"] = Movie;
+                    }
+                }
+                path = BaseDirectory + @"\App_Data\allGaners.json";
+                try
+                {
+                    using (StreamReader r = new StreamReader(path))
+                    {
+                        string json = r.ReadToEnd();
+                        Ganer = JsonConvert.DeserializeObject<List<Ganers>>(json);
+                   
+                        TempData["GanersList"] = Ganer;
+                    }
+                }
+                catch (Exception)
+                {
+                    Process process = new Process();
+                    process.StartInfo.FileName = BDirectory + @"\ShowGaners\ShowGaners\bin\Debug\ShowGaners.exe";
+                    process.StartInfo.Arguments = DataBacePath + " " + path;
+                    process.StartInfo.UseShellExecute = false;
+                    process.StartInfo.RedirectStandardOutput = true;
+                    process.StartInfo.RedirectStandardError = true;
+                    process.Start();
+                    //Read the output (or the error)
+                    string output = process.StandardOutput.ReadToEnd();
+                    Console.WriteLine(output);
+                    string err = process.StandardError.ReadToEnd();
+                    Console.WriteLine(err);
+                    process.WaitForExit();
+
+                    using (StreamReader r = new StreamReader(path))
+                    {
+                        string json = r.ReadToEnd();
+                        Ganer = JsonConvert.DeserializeObject<List<Ganers>>(json);
+                        TempData["GanersList"] = Ganer;
+                    }
+                }
+            }
+            catch (Exception) { }
+        }
         
         public ActionResult CMovie(string id)
         {
@@ -27,26 +112,15 @@ namespace WebApplication1.Controllers
             try
             {
 
-                string path = BaseDirectory + @"\App_Data\allGaners.json";
-                using (StreamReader r = new StreamReader(path))
-                {
-                    string json = r.ReadToEnd();
-                    List<Ganers> Ganer = JsonConvert.DeserializeObject<List<Ganers>>(json);
-                    TempData["GanersList"] = Ganer;
-                }
-                path = BaseDirectory + @"\App_Data\allMovies.json";
-                using (StreamReader r = new StreamReader(path))
-                {
-                    string json = r.ReadToEnd();
-                    List<Movies> Movie = JsonConvert.DeserializeObject<List<Movies>>(json);
-                    TempData["MovieList"] = Movie;
+              getMoviesAndGaners();
+              List<Movies> Movie = ((IEnumerable<Movies>)TempData["MovieList"]).Cast<Movies>().ToList();
 
-                    foreach (Movies mov in Movie)
+                foreach (Movies mov in Movie)
                     {
                         if (mov.Idmovie.ToString() == id)
                             Cmovie = mov;
                     }
-                }
+                
             }
 
             catch (Exception) { return View(Cmovie); }
@@ -126,27 +200,9 @@ namespace WebApplication1.Controllers
                     string err = process.StandardError.ReadToEnd();
                     Console.WriteLine(err);
                     process.WaitForExit();
-
-
-
-
-                    using (StreamReader r = new StreamReader(path))
-                    {
-                        string json = r.ReadToEnd();
-                        List<Movies> Movie = JsonConvert.DeserializeObject<List<Movies>>(json);
-                        ViewBag.moviesList = Movie;
-                        TempData["MovieList"] = Movie;
-                    }
                 }
-                    path = BaseDirectory + @"\App_Data\allGaners.json";
-                    using (StreamReader r = new StreamReader(path))
-                    {
-                        string json = r.ReadToEnd();
-                        List<Ganers> Ganer = JsonConvert.DeserializeObject<List<Ganers>>(json);
-                        TempData["GanersList"] = Ganer;
-                    }
-                
-
+                getMoviesAndGaners();
+                ViewBag.moviesList = ((IEnumerable<Movies>)TempData["MovieList"]).Cast<Movies>().ToList();
             }
             catch (Exception ex)
             {
@@ -207,31 +263,16 @@ namespace WebApplication1.Controllers
                     string err = process.StandardError.ReadToEnd();
                     Console.WriteLine(err);
                     process.WaitForExit();
-
-
-
-
                     using (StreamReader r = new StreamReader(path))
                     {
                         string json = r.ReadToEnd();
                         List<Movies> Movie = JsonConvert.DeserializeObject<List<Movies>>(json);
                         ViewBag.moviesList = Movie;
                     }
+
                 }
-                path = BaseDirectory+@"\App_Data\allGaners.json";
-                using (StreamReader r = new StreamReader(path))
-                {
-                    string json = r.ReadToEnd();
-                    List<Ganers> Ganer = JsonConvert.DeserializeObject<List<Ganers>>(json);
-                    TempData["GanersList"] = Ganer;
-                }
-                path = BaseDirectory+ @"\App_Data\allMovies.json";
-                using (StreamReader r = new StreamReader(path))
-                {
-                    string json = r.ReadToEnd();
-                    List<Movies> Movie = JsonConvert.DeserializeObject<List<Movies>>(json);
-                    TempData["MovieList"] = Movie;
-                }
+                getMoviesAndGaners();
+               
             }
             catch (Exception)
             {
@@ -251,7 +292,7 @@ namespace WebApplication1.Controllers
             try
             {
                 Process process = new Process();
-                process.StartInfo.FileName = BDirectory +  @"\ShowGaners\ShowGaners\bin\Debug\ShowGaners.exe";
+                process.StartInfo.FileName = BDirectory + @"\ShowGaners\ShowGaners\bin\Debug\ShowGaners.exe";
                 process.StartInfo.Arguments = DataBacePath + " " + path;
                 process.StartInfo.UseShellExecute = false;
                 process.StartInfo.RedirectStandardOutput = true;
@@ -264,24 +305,8 @@ namespace WebApplication1.Controllers
                 Console.WriteLine(err);
                 process.WaitForExit();
 
-
-
-
-                using (StreamReader r = new StreamReader(path))
-                {
-                    string json = r.ReadToEnd();
-                    List<Ganers> Ganer = JsonConvert.DeserializeObject<List<Ganers>>(json);
-                    ViewBag.GanersList = Ganer;
-                    TempData["GanersList"] = Ganer;
-                }
-                path = BaseDirectory+@"\App_Data\allMovies.json";
-                using (StreamReader r = new StreamReader(path))
-                {
-                    string json = r.ReadToEnd();
-                    List<Movies> Movie = JsonConvert.DeserializeObject<List<Movies>>(json);
-                    TempData["MovieList"] = Movie;
-                }
-
+                getMoviesAndGaners();
+                ViewBag.GanersList = ((IEnumerable<Ganers>)TempData["GanersList"]).Cast<Ganers>().ToList();
             }
             catch (Exception)
             {
@@ -324,20 +349,7 @@ namespace WebApplication1.Controllers
                     List<Movies> Movie = JsonConvert.DeserializeObject<List<Movies>>(json);
                     ViewBag.moviesList = Movie;
                 }
-                path = BaseDirectory+@"\App_Data\allGaners.json";
-                using (StreamReader r = new StreamReader(path))
-                {
-                    string json = r.ReadToEnd();
-                    List<Ganers> Ganer = JsonConvert.DeserializeObject<List<Ganers>>(json);
-                    TempData["GanersList"] = Ganer;
-                }
-                path = BaseDirectory+ @"\App_Data\allMovies.json";
-                using (StreamReader r = new StreamReader(path))
-                {
-                    string json = r.ReadToEnd();
-                    List<Movies> Movie = JsonConvert.DeserializeObject<List<Movies>>(json);
-                    TempData["MovieList"] = Movie;
-                }
+                getMoviesAndGaners();
             }
             catch (Exception)
             {
