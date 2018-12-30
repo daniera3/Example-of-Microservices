@@ -17,6 +17,8 @@ namespace WebApplication1.Controllers
     public class MoviesController : Controller
     {
 
+
+        string DataBacePath = @"Data Source=localhost;Initial Catalog=dbo;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Integrated Security=True";
         string BaseDirectory = Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory);
         string BDirectory = Path.GetDirectoryName((Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory)));
 
@@ -26,7 +28,7 @@ namespace WebApplication1.Controllers
             List<Movies> Movie=new List<Movies>();
             List<Ganers> Ganer= new List<Ganers>();
             string path;
-            string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=" + BaseDirectory + @"\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
+            //string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=" + BaseDirectory + @"\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
             path = BaseDirectory + @"\App_Data\allMovies.json"; 
             try
             {
@@ -156,9 +158,9 @@ namespace WebApplication1.Controllers
 
             string path = BaseDirectory + @"\App_Data\allMovies.json";
 
-            string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=" + BaseDirectory + @"\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
+            //string DataBacePath = @"Data Source=LAPTOP-K2DSDCMH;Initial Catalog=dbo;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Integrated Security=True";
             try
-            {// string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
+            {// string DataBacePath = @"Data Source=LAPTOP-K2DSDCMH;Initial Catalog=dbo;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Integrated Security=True";
                 if (proj == "java")
                 {
 
@@ -225,7 +227,7 @@ namespace WebApplication1.Controllers
                 num = "10";
 
             string path = BaseDirectory+@"\App_Data\TopMovies.json";
-            string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=" + BaseDirectory + @"\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
+           // string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=" + BaseDirectory + @"\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
             //string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
             try
             {
@@ -291,7 +293,7 @@ namespace WebApplication1.Controllers
 
             string path = BaseDirectory+ @"\App_Data\allGaners.json";
 
-            string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename="+ BaseDirectory+@"\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
+            //string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename="+ BaseDirectory+@"\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
             try
             {
                 Process process = new Process();
@@ -324,7 +326,7 @@ namespace WebApplication1.Controllers
         {
             ViewBag.ganer = ganer;
             string path = BaseDirectory+ @"\App_Data\MGaners.json";
-            string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=" + BaseDirectory + @"\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
+            //string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=" + BaseDirectory + @"\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
             //string DataBacePath = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=D:\Example-of-Microservices\WebApplication1\WebApplication1\App_Data\aspnet-WebApplication1-20181211112737.mdf;Initial Catalog=aspnet-WebApplication1-20181211112737;Integrated Security=True";
             try
             {
