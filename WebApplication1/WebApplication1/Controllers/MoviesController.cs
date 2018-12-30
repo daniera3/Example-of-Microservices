@@ -165,7 +165,7 @@ namespace WebApplication1.Controllers
 
                     Process process = new Process();
                     process.StartInfo.FileName = "java";
-                    process.StartInfo.Arguments = "-jar " + BDirectory + @"\retriver.jar" + " jdbc:sqlserver://localhost:1433;databaseName=dbo;integratedSecurity=true;";
+                    process.StartInfo.Arguments = "-jar " + "\""+ BDirectory + @"\retriver.jar"+"\"" + " jdbc:sqlserver://localhost:1433;databaseName=dbo;integratedSecurity=true;";
                     process.StartInfo.UseShellExecute = false;
                     process.StartInfo.RedirectStandardOutput = true;
                     process.StartInfo.RedirectStandardError = true;
@@ -235,7 +235,7 @@ namespace WebApplication1.Controllers
 
                     Process process = new Process();
                     process.StartInfo.FileName = "java";
-                    process.StartInfo.Arguments = "-jar " + BDirectory + @"\top.jar" + " jdbc:sqlserver://localhost:1433;databaseName=dbo;integratedSecurity=true;";
+                    process.StartInfo.Arguments = "-jar " + "\""+BDirectory + @"\top.jar"+ "\"" + " jdbc:sqlserver://localhost:1433;databaseName=dbo;integratedSecurity=true;";
                     process.StartInfo.UseShellExecute = false;
                     process.StartInfo.RedirectStandardOutput = true;
                     process.StartInfo.RedirectStandardError = true;
