@@ -45,7 +45,7 @@ namespace WebApplication1.Controllers
                 {
                     Process process = new Process();
                     process.StartInfo.FileName = BDirectory + @"\wecandothis\candoit\bin\Debug\candoit.exe";
-                    process.StartInfo.Arguments = DataBacePath + " " + path;
+                    process.StartInfo.Arguments = "\""+DataBacePath+"\"" + " " + "\""+path + "\"";
                     process.StartInfo.UseShellExecute = false;
                     process.StartInfo.RedirectStandardOutput = true;
                     process.StartInfo.RedirectStandardError = true;
@@ -83,7 +83,7 @@ namespace WebApplication1.Controllers
                 {
                     Process process = new Process();
                     process.StartInfo.FileName = BDirectory + @"\ShowGaners\ShowGaners\bin\Debug\ShowGaners.exe";
-                    process.StartInfo.Arguments = DataBacePath + " " + path;
+                    process.StartInfo.Arguments = "\"" + DataBacePath + "\"" + " " + "\"" + path + "\"";
                     process.StartInfo.UseShellExecute = false;
                     process.StartInfo.RedirectStandardOutput = true;
                     process.StartInfo.RedirectStandardError = true;
@@ -182,6 +182,7 @@ namespace WebApplication1.Controllers
                     List<Movies> Movie = JsonConvert.DeserializeObject<List<Movies>>(output);
                     ViewBag.moviesList = Movie;
                     TempData["MovieList"] = Movie;
+                    getMoviesAndGaners();
 
                 }
                 else
@@ -189,7 +190,7 @@ namespace WebApplication1.Controllers
 
                     Process process = new Process();
                     process.StartInfo.FileName = BDirectory + @"\wecandothis\candoit\bin\Debug\candoit.exe";
-                    process.StartInfo.Arguments = DataBacePath + " " + path;
+                    process.StartInfo.Arguments = "\"" + DataBacePath + "\"" + " " + "\"" + path + "\"";
                     process.StartInfo.UseShellExecute = false;
                     process.StartInfo.RedirectStandardOutput = true;
                     process.StartInfo.RedirectStandardError = true;
@@ -200,9 +201,11 @@ namespace WebApplication1.Controllers
                     string err = process.StandardError.ReadToEnd();
                     Console.WriteLine(err);
                     process.WaitForExit();
+                    getMoviesAndGaners();
+                    ViewBag.moviesList = ((IEnumerable<Movies>)TempData["MovieList"]).Cast<Movies>().ToList();
                 }
-                getMoviesAndGaners();
-                ViewBag.moviesList = ((IEnumerable<Movies>)TempData["MovieList"]).Cast<Movies>().ToList();
+                
+                
             }
             catch (Exception ex)
             {
@@ -252,7 +255,7 @@ namespace WebApplication1.Controllers
                 {
                     Process process = new Process();
                     process.StartInfo.FileName = BDirectory + @"\TopMovies\TopMovies\bin\\Debug\TopMovies.exe";
-                    process.StartInfo.Arguments = DataBacePath + " " + path + " " + num;
+                    process.StartInfo.Arguments = "\"" + DataBacePath + "\"" + " " + "\"" + path + "\"" +" " + num;
                     process.StartInfo.UseShellExecute = false;
                     process.StartInfo.RedirectStandardOutput = true;
                     process.StartInfo.RedirectStandardError = true;
@@ -293,7 +296,7 @@ namespace WebApplication1.Controllers
             {
                 Process process = new Process();
                 process.StartInfo.FileName = BDirectory + @"\ShowGaners\ShowGaners\bin\Debug\ShowGaners.exe";
-                process.StartInfo.Arguments = DataBacePath + " " + path;
+                process.StartInfo.Arguments = "\"" + DataBacePath + "\"" + " " + "\"" + path + "\"";
                 process.StartInfo.UseShellExecute = false;
                 process.StartInfo.RedirectStandardOutput = true;
                 process.StartInfo.RedirectStandardError = true;
@@ -327,7 +330,7 @@ namespace WebApplication1.Controllers
             {
                 Process process = new Process();
                 process.StartInfo.FileName = BDirectory + @"\MoviesPerGaner\MoviesPerGaner\bin\Debug\MoviesPerGaner.exe";
-                process.StartInfo.Arguments = DataBacePath + " " + path + " " + ganer;
+                process.StartInfo.Arguments = "\"" + DataBacePath + "\"" + " " + "\"" + path + "\"" + " " + ganer;
                 process.StartInfo.UseShellExecute = false;
                 process.StartInfo.RedirectStandardOutput = true;
                 process.StartInfo.RedirectStandardError = true;
