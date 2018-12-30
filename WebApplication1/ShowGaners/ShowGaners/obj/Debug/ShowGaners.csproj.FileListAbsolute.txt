@@ -7,3 +7,13 @@ D:\Example-of-Microservices\WebApplication1\ShowGaners\ShowGaners\obj\Debug\Show
 D:\Example-of-Microservices\WebApplication1\ShowGaners\ShowGaners\obj\Debug\ShowGaners.csproj.CopyComplete
 D:\Example-of-Microservices\WebApplication1\ShowGaners\ShowGaners\obj\Debug\ShowGaners.exe
 D:\Example-of-Microservices\WebApplication1\ShowGaners\ShowGaners\obj\Debug\ShowGaners.pdb
+C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\ShowGaners\ShowGaners\bin\Debug\ShowGaners.exe.config
+C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\ShowGaners\ShowGaners\bin\Debug\ShowGaners.exe
+C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\ShowGaners\ShowGaners\bin\Debug\ShowGaners.pdb
+C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\ShowGaners\ShowGaners\bin\Debug\Newtonsoft.Json.dll
+C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\ShowGaners\ShowGaners\bin\Debug\StreamJsonRpc.dll
+C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\ShowGaners\ShowGaners\obj\Debug\ShowGaners.csprojAssemblyReference.cache
+C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\ShowGaners\ShowGaners\obj\Debug\ShowGaners.csproj.CoreCompileInputs.cache
+C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\ShowGaners\ShowGaners\obj\Debug\ShowGaners.csproj.CopyComplete
+C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\ShowGaners\ShowGaners\obj\Debug\ShowGaners.exe
+C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\ShowGaners\ShowGaners\obj\Debug\ShowGaners.pdb

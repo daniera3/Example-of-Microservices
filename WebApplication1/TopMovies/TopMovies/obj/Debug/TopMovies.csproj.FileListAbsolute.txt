@@ -8,3 +8,13 @@ D:\Example-of-Microservices\WebApplication1\TopMovies\TopMovies\obj\Debug\TopMov
 D:\Example-of-Microservices\WebApplication1\TopMovies\TopMovies\obj\Debug\TopMovies.csproj.CopyComplete
 D:\Example-of-Microservices\WebApplication1\TopMovies\TopMovies\obj\Debug\TopMovies.exe
 D:\Example-of-Microservices\WebApplication1\TopMovies\TopMovies\obj\Debug\TopMovies.pdb
+C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\TopMovies\TopMovies\bin\Debug\TopMovies.exe.config
+C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\TopMovies\TopMovies\bin\Debug\TopMovies.exe
+C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\TopMovies\TopMovies\bin\Debug\TopMovies.pdb
+C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\TopMovies\TopMovies\bin\Debug\Newtonsoft.Json.dll
+C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\TopMovies\TopMovies\bin\Debug\StreamJsonRpc.dll
+C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\TopMovies\TopMovies\obj\Debug\TopMovies.csprojAssemblyReference.cache
+C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\TopMovies\TopMovies\obj\Debug\TopMovies.csproj.CoreCompileInputs.cache
+C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\TopMovies\TopMovies\obj\Debug\TopMovies.csproj.CopyComplete
+C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\TopMovies\TopMovies\obj\Debug\TopMovies.exe
+C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\TopMovies\TopMovies\obj\Debug\TopMovies.pdb

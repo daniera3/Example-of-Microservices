@@ -526,3 +526,17 @@ D:\Example-of-Microservices\WebApplication1\WebApplication1\bin\IronPython.Wpf.x
 D:\Example-of-Microservices\WebApplication1\WebApplication1\bin\Microsoft.Dynamic.xml
 D:\Example-of-Microservices\WebApplication1\WebApplication1\bin\Microsoft.Scripting.xml
 D:\Example-of-Microservices\WebApplication1\WebApplication1\bin\Microsoft.Scripting.Metadata.xml
+C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\WebApplication1\bin\IronPython.dll
+C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\WebApplication1\bin\IronPython.Modules.dll
+C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\WebApplication1\bin\IronPython.SQLite.dll
+C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\WebApplication1\bin\IronPython.Wpf.dll
+C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\WebApplication1\bin\Microsoft.Dynamic.dll
+C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\WebApplication1\bin\Microsoft.Scripting.dll
+C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\WebApplication1\bin\Microsoft.Scripting.Metadata.dll
+C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\WebApplication1\bin\IronPython.xml
+C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\WebApplication1\bin\IronPython.Modules.xml
+C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\WebApplication1\bin\IronPython.SQLite.xml
+C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\WebApplication1\bin\IronPython.Wpf.xml
+C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\WebApplication1\bin\Microsoft.Dynamic.xml
+C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\WebApplication1\bin\Microsoft.Scripting.xml
+C:\Users\nicol\OneDrive\שולחן העבודה\Example-of-Microservices-\WebApplication1\WebApplication1\bin\Microsoft.Scripting.Metadata.xml

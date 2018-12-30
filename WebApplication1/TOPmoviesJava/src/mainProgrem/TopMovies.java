@@ -37,7 +37,7 @@ public class TopMovies {
 	public static void main(String[] args) throws  Exception {
 		ArrayList<movieClass> allMovies=new ArrayList<movieClass>();
 		
-		if(args.length>0) {
+		if(args.length>=0) {
 			connectionUrl=args[0];
 		}
 		else {
